@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace WebwareTest\MessageBus\Event;
 
 use Override;
-use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversTrait;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Webware\MessageBus\Event\EventPropagationTrait;
 use WebwareTestAsset\MessageBus\Event\PropagationAwareFixture;
 
-#[CoversClass(EventPropagationTrait::class)]
+#[CoversTrait(EventPropagationTrait::class)]
 final class EventPropagationTraitTest extends TestCase
 {
     private PropagationAwareFixture $subject;

@@ -3,8 +3,7 @@
 /.phpunit.result.cache
 /.phpstan-cache
 /phpstan.neon
-/phpbench.json
+/phpunit.xml
 /clover.xml
 /coveralls-upload.json
-/phpunit.xml
 /vendor/

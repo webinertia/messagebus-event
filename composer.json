@@ -39,6 +39,7 @@
         "webware/webware-psl-type": "^0.1.x-dev"
     },
     "require-dev": {
+        "php-coveralls/php-coveralls": "^2.7",
         "phpbench/phpbench": "^1.7",
         "phpunit/phpunit": "^12.5.30",
         "roave/security-advisories": "dev-master",
@@ -66,6 +67,6 @@
         "test": "phpunit --colors=always --testsuite \"unit test\"",
         "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
         "test-integration": "phpunit --colors=always --testsuite \"integration test\"",
-        "upload-coverage": "coveralls -v"
+        "upload-coverage": "php-coveralls -v"
     }
 }
