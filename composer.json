@@ -1,0 +1,71 @@
+{
+    "name": "webware/messagebus-event",
+    "description": "Phly EventDispatcher support for MessageBus",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "messagebus",
+        "event",
+        "php"
+    ],
+    "authors": [
+        {
+            "name": "Joey (aka Tyrsson) Smith",
+            "email": "jsmith@webinertia.net",
+            "homepage": "https://github.com/webinertia/messagebus-event/discussions",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "platform": {
+            "php": "8.4.1"
+        },
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true
+        }
+    },
+    "extra": {
+        "laminas": {
+            "config-provider": "Webware\\MessageBus\\Event\\ConfigProvider"
+        }
+    },
+    "require": {
+        "php": "~8.4.1 || ~8.5.0",
+        "laminas/laminas-servicemanager": "^4.0.0",
+        "phly/phly-event-dispatcher": "^1.5.0",
+        "php-standard-library/type": "^6.2",
+        "webware/webware-psl-type": "^0.1.x-dev"
+    },
+    "require-dev": {
+        "phpbench/phpbench": "^1.7",
+        "phpunit/phpunit": "^12.5.30",
+        "roave/security-advisories": "dev-master",
+        "webware/message-bus": "^0.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Webware\\MessageBus\\Event\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "WebwareBench\\MessageBus\\Event\\": "bench/",
+            "WebwareIntegrationTest\\MessageBus\\Event\\": "test/integration/",
+            "WebwareTestAsset\\MessageBus\\Event\\": "test/asset/",
+            "WebwareTest\\MessageBus\\Event\\": "test/unit/"
+        }
+    },
+    "scripts": {
+        "bench": "phpbench run --report=aggregate",
+        "test-all": [
+            "@test",
+            "@test-integration"
+        ],
+        "test": "phpunit --colors=always --testsuite \"unit test\"",
+        "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
+        "test-integration": "phpunit --colors=always --testsuite \"integration test\"",
+        "upload-coverage": "coveralls -v"
+    }
+}
