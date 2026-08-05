@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace WebwareTest\MessageBus\Event;
 
 use Override;
-use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversTrait;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Webware\MessageBus\Event\Event;
 use Webware\MessageBus\Event\EventAwareInterface;
 use Webware\MessageBus\Event\EventAwareTrait;
 
-#[CoversClass(EventAwareTrait::class)]
+#[CoversTrait(EventAwareTrait::class)]
 final class EventAwareTraitTest extends TestCase
 {
     private EventAwareInterface $subject;
