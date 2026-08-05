@@ -4,4 +4,6 @@
 /.phpstan-cache
 /phpstan.neon
 /phpunit.xml
+/clover.xml
+/coveralls-upload.json
 /vendor/
