@@ -1,0 +1,85 @@
+<?php
+
+declare(strict_types=1);
+
+/**
+ * This file is part of the Webware MessageBus Event package.
+ *
+ * Copyright (c) 2026 Joey (aka Tyrsson) Smith <jsmith@webinertia.net>
+ * and contributors.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Webware\MessageBus\Event;
+
+use Override;
+
+class Event implements EventInterface, EventPropagationInterface
+{
+    use EventPropagationTrait;
+
+    /**
+     * @param array<string, mixed> $params
+     */
+    public function __construct(
+        private ?string $name = null,
+        private ?object $target = null,
+        private array $params = [],
+    ) {}
+
+    #[Override]
+    public function getName(): string
+    {
+        return $this->name ?? static::class;
+    }
+
+    #[Override]
+    public function getParam(string $name, mixed $default = null): mixed
+    {
+        return $this->params[$name] ?? $default;
+    }
+
+    /**
+     * @return array<string, mixed>
+     */
+    #[Override]
+    public function getParams(): array
+    {
+        return $this->params;
+    }
+
+    #[Override]
+    public function getTarget(): ?object
+    {
+        return $this->target;
+    }
+
+    #[Override]
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+    }
+
+    #[Override]
+    public function setParam(string $name, mixed $value): void
+    {
+        $this->params[$name] = $value;
+    }
+
+    /**
+     * @param array<string, mixed> $params
+     */
+    #[Override]
+    public function setParams(array $params): void
+    {
+        $this->params = $params;
+    }
+
+    #[Override]
+    public function setTarget(object $target): void
+    {
+        $this->target = $target;
+    }
+}
