@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bd8a25eb1c06b8cb1bf98ab0afce40c5",
+    "content-hash": "628d5cf67a05912f2600a108c1397a49",
     "packages": [
         {
             "name": "brick/varexporter",
@@ -954,6 +954,70 @@
             "time": "2019-01-08T18:20:26+00:00"
         },
         {
+            "name": "webware/message-bus",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webinertia/message-bus.git",
+                "reference": "2fbb097700a4c4652a93fa7901520f3407891ce1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webinertia/message-bus/zipball/2fbb097700a4c4652a93fa7901520f3407891ce1",
+                "reference": "2fbb097700a4c4652a93fa7901520f3407891ce1",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~8.4.1 || ~8.5.0",
+                "psr/container": "^2.0"
+            },
+            "require-dev": {
+                "infection/infection": "^0.34.1",
+                "laminas/laminas-servicemanager": "^4.0.0",
+                "php-coveralls/php-coveralls": "^2.7",
+                "php-standard-library/type": "^6.2",
+                "phpbench/phpbench": "^1.7",
+                "phpunit/phpunit": "^12.5.30",
+                "roave/backward-compatibility-check": "^8.21.0",
+                "roave/security-advisories": "dev-master"
+            },
+            "suggest": {
+                "laminas/laminas-servicemanager": "Laminas\\ServiceManager component"
+            },
+            "type": "library",
+            "extra": {
+                "laminas": {
+                    "config-provider": "Webware\\MessageBus\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/functions/priority_queue_reducer_factory.php",
+                    "src/functions/collection_mapper_factory.php"
+                ],
+                "psr-4": {
+                    "Webware\\MessageBus\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "MessageBus for Mezzio",
+            "homepage": "https://github.com/webinertia/message-bus/discussions",
+            "keywords": [
+                "messagebus",
+                "mezzio",
+                "webware"
+            ],
+            "support": {
+                "forum": "https://github.com/webinertia/message-bus/discussions",
+                "issues": "https://github.com/webinertia/message-bus/issues",
+                "source": "https://github.com/webinertia/message-bus"
+            },
+            "time": "2026-08-06T10:17:11+00:00"
+        },
+        {
             "name": "webware/webware-psl-type",
             "version": "0.1.x-dev",
             "source": {
@@ -1156,21 +1220,21 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "7.15.2",
+            "version": "7.15.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "744101956d78b7c1384d0cbf379db13e859167bf"
+                "reference": "ae311b8f045ea93ce7b1c9cdb7cec06c53f944bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/744101956d78b7c1384d0cbf379db13e859167bf",
-                "reference": "744101956d78b7c1384d0cbf379db13e859167bf",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/ae311b8f045ea93ce7b1c9cdb7cec06c53f944bc",
+                "reference": "ae311b8f045ea93ce7b1c9cdb7cec06c53f944bc",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "guzzlehttp/promises": "^2.5.1",
+                "guzzlehttp/promises": "^2.5.2",
                 "guzzlehttp/psr7": "^2.13",
                 "php": "^7.2.5 || ^8.0",
                 "psr/http-client": "^1.0",
@@ -1264,7 +1328,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
-                "source": "https://github.com/guzzle/guzzle/tree/7.15.2"
+                "source": "https://github.com/guzzle/guzzle/tree/7.15.3"
             },
             "funding": [
                 {
@@ -1280,20 +1344,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-26T23:23:20+00:00"
+            "time": "2026-08-05T19:48:21+00:00"
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "2.5.1",
+            "version": "2.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "9ad1e4fc607446a055b95870c7f668e93b5cff29"
+                "reference": "2823687acff28b2dbe67b2508a6b300e2c3fa4ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/9ad1e4fc607446a055b95870c7f668e93b5cff29",
-                "reference": "9ad1e4fc607446a055b95870c7f668e93b5cff29",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/2823687acff28b2dbe67b2508a6b300e2c3fa4ce",
+                "reference": "2823687acff28b2dbe67b2508a6b300e2c3fa4ce",
                 "shasum": ""
             },
             "require": {
@@ -1348,7 +1412,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/promises/issues",
-                "source": "https://github.com/guzzle/promises/tree/2.5.1"
+                "source": "https://github.com/guzzle/promises/tree/2.5.2"
             },
             "funding": [
                 {
@@ -1364,7 +1428,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-08T15:48:39+00:00"
+            "time": "2026-08-05T19:30:54+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -2640,12 +2704,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "87faae4ca4b824c493788fac487f2e212be4fd22"
+                "reference": "b869df2059731ad01759305695f2cfd528e98705"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/87faae4ca4b824c493788fac487f2e212be4fd22",
-                "reference": "87faae4ca4b824c493788fac487f2e212be4fd22",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/b869df2059731ad01759305695f2cfd528e98705",
+                "reference": "b869df2059731ad01759305695f2cfd528e98705",
                 "shasum": ""
             },
             "conflict": {
@@ -3416,8 +3480,8 @@
                 "silverstripe/versioned-admin": ">=1,<1.11.1",
                 "simogeo/filemanager": "<=2.5",
                 "simple-updates/phpwhois": "<=1",
-                "simplesamlphp/saml2": "<=4.20.2|>=5,<5.0.6|>=6,<6.2.1",
-                "simplesamlphp/saml2-legacy": "<=4.20.2",
+                "simplesamlphp/saml2": "<4.19.3|>=4.20,<=4.20.2|>=5,<5.0.6|>=6,<6.2.1",
+                "simplesamlphp/saml2-legacy": "<4.19.3|>=4.20,<=4.20.2",
                 "simplesamlphp/simplesamlphp": "<=2.4.6|>=2.5,<=2.5.1",
                 "simplesamlphp/simplesamlphp-module-casserver": "<=7.0.2",
                 "simplesamlphp/simplesamlphp-module-infocard": "<1.0.1",
@@ -3450,7 +3514,7 @@
                 "spomky-labs/otphp": "<11.4.3",
                 "spoon/library": "<1.4.1",
                 "spoonity/tcpdf": "<6.2.22",
-                "squizlabs/php_codesniffer": ">=1,<2.8.1|>=3,<3.0.1",
+                "squizlabs/php_codesniffer": "<3.13.6|>=4,<4.0.2",
                 "ssddanbrown/bookstack": "<24.05.1",
                 "starcitizentools/citizen-skin": ">=1.9.4,<3.9",
                 "starcitizentools/short-description": ">=4,<4.0.1",
@@ -3757,7 +3821,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-08-03T22:59:19+00:00"
+            "time": "2026-08-06T12:55:35+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -6224,67 +6288,6 @@
                 "source": "https://github.com/webmozarts/glob/tree/4.7.0"
             },
             "time": "2024-03-07T20:33:40+00:00"
-        },
-        {
-            "name": "webware/message-bus",
-            "version": "0.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/webinertia/message-bus.git",
-                "reference": "3c7a9787b46b059c95eca7f25ee636f3b54dc1ca"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/webinertia/message-bus/zipball/3c7a9787b46b059c95eca7f25ee636f3b54dc1ca",
-                "reference": "3c7a9787b46b059c95eca7f25ee636f3b54dc1ca",
-                "shasum": ""
-            },
-            "require": {
-                "php": "~8.4.1 || ~8.5.0",
-                "psr/container": "^2.0"
-            },
-            "require-dev": {
-                "laminas/laminas-servicemanager": "^4.0.0",
-                "php-standard-library/type": "^6.2",
-                "phpunit/phpunit": "^12.5.30",
-                "roave/backward-compatibility-check": "^8.21.0",
-                "roave/security-advisories": "dev-master"
-            },
-            "suggest": {
-                "laminas/laminas-servicemanager": "Laminas\\ServiceManager component"
-            },
-            "type": "library",
-            "extra": {
-                "laminas": {
-                    "config-provider": "Webware\\MessageBus\\ConfigProvider"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/functions/priority_queue_reducer_factory.php",
-                    "src/functions/collection_mapper_factory.php"
-                ],
-                "psr-4": {
-                    "Webware\\MessageBus\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "MessageBus for Mezzio",
-            "homepage": "https://github.com/webinertia/message-bus/discussions",
-            "keywords": [
-                "messagebus",
-                "mezzio",
-                "webware"
-            ],
-            "support": {
-                "forum": "https://github.com/webinertia/message-bus/discussions",
-                "issues": "https://github.com/webinertia/message-bus/issues",
-                "source": "https://github.com/webinertia/message-bus"
-            },
-            "time": "2026-08-03T01:59:25+00:00"
         }
     ],
     "aliases": [],
