@@ -90,24 +90,34 @@ with `array_merge_recursive`) adds Query events alongside the default Command on
 
 Both `CommandPostHandleMiddleware` and `QueryPostHandleMiddleware` also check whether the result implements
 `EventAwareInterface`; if so, and an event has been attached to it, that event is dispatched too — in
-addition to the built-in `*PostHandleEvent`. This lets a handler attach a domain event to its result:
+addition to the built-in `*PostHandleEvent`.
+
+Always return the `CommandResult`/`QueryResult` value objects provided by `webware/message-bus` from your
+handlers — don't write a custom result class. Those classes are `final` precisely so results stay
+normalized and consistent across the application. Neither implements `EventAwareInterface`, so this hook
+simply doesn't apply to them; if a handler needs to dispatch an additional domain event, dispatch it
+directly from the handler using the `EventDispatcherInterface` instead of attaching it to the result:
 
 ```php
+use Psr\EventDispatcher\EventDispatcherInterface;
 use Webware\MessageBus\Command\CommandResult;
 use Webware\MessageBus\Event\Event;
-use Webware\MessageBus\Event\EventAwareInterface;
-use Webware\MessageBus\Event\EventAwareTrait;
 
-final class CreateUserResult extends CommandResult implements EventAwareInterface
+final class CreateUserHandler
 {
-    use EventAwareTrait;
+    public function __construct(
+        private readonly EventDispatcherInterface $eventDispatcher,
+    ) {}
+
+    public function handle(CreateUser $command): CommandResult
+    {
+        $userId = /* ... create the user ... */;
+
+        $this->eventDispatcher->dispatch(new Event(name: 'user.created', target: $command, params: ['id' => $userId]));
+
+        return new CommandResult($command, $status, $userId);
+    }
 }
-
-// inside your command handler:
-$result = new CreateUserResult($command, $status, $payload);
-$result->setEvent(new Event(name: 'user.created', target: $result, params: ['id' => $userId]));
-
-return $result;
 ```
 
 ## Stopping propagation
