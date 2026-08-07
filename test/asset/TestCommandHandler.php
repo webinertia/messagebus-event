@@ -8,12 +8,12 @@ use LogicException;
 use Override;
 use Webware\MessageBus\Command\CommandInterface;
 use Webware\MessageBus\Command\CommandResult;
-use Webware\MessageBus\MessageHandlerInterface;
+use Webware\MessageBus\CommandHandlerInterface;
 use Webware\MessageBus\MessageInterface;
 use Webware\MessageBus\MessageStatus;
 use Webware\MessageBus\ResultInterface;
 
-final class TestCommandHandler implements MessageHandlerInterface
+final class TestCommandHandler implements CommandHandlerInterface
 {
     #[Override]
     public function handle(MessageInterface $message): ResultInterface
