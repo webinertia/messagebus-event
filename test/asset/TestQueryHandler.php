@@ -6,14 +6,14 @@ namespace WebwareTestAsset\MessageBus\Event;
 
 use LogicException;
 use Override;
-use Webware\MessageBus\MessageHandlerInterface;
 use Webware\MessageBus\MessageInterface;
 use Webware\MessageBus\MessageStatus;
 use Webware\MessageBus\Query\QueryInterface;
 use Webware\MessageBus\Query\QueryResult;
+use Webware\MessageBus\QueryHandlerInterface;
 use Webware\MessageBus\ResultInterface;
 
-final class TestQueryHandler implements MessageHandlerInterface
+final class TestQueryHandler implements QueryHandlerInterface
 {
     #[Override]
     public function handle(MessageInterface $message): ResultInterface
