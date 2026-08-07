@@ -36,14 +36,14 @@
         "laminas/laminas-servicemanager": "^4.0.0",
         "phly/phly-event-dispatcher": "^1.5.0",
         "php-standard-library/type": "^6.2",
+        "webware/message-bus": "^1.0.0",
         "webware/webware-psl-type": "^0.1.x-dev"
     },
     "require-dev": {
         "php-coveralls/php-coveralls": "^2.7",
         "phpbench/phpbench": "^1.7",
         "phpunit/phpunit": "^12.5.30",
-        "roave/security-advisories": "dev-master",
-        "webware/message-bus": "^0.1.0"
+        "roave/security-advisories": "dev-master"
     },
     "autoload": {
         "psr-4": {
