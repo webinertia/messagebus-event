@@ -3,9 +3,8 @@
 ## Requirements
 
 - PHP `~8.4.1 || ~8.5.0`
-- [`webware/message-bus`](https://github.com/webinertia/message-bus) `^0.1.0` — **not** installed
-  automatically by this package (it's a `require-dev` dependency here, used only by the test suite). Your
-  application must require it directly.
+- [`webware/message-bus`](https://github.com/webinertia/message-bus) v2 (`^2.0`; during the beta the dev
+  branch is tracked as `2.0.x-dev`). Installed automatically as a direct dependency of this package.
 - [`laminas/laminas-servicemanager`](https://github.com/laminas/laminas-servicemanager) `^4.0.0`
 - [`phly/phly-event-dispatcher`](https://github.com/phly/phly-event-dispatcher) `^1.5.0`
 
