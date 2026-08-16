@@ -18,9 +18,9 @@ use Override;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Webware\MessageBus\Command\CommandInterface;
 use Webware\MessageBus\Event\Command\CommandPreHandleEvent;
-use Webware\MessageBus\MessageHandlerInterface;
 use Webware\MessageBus\MessageInterface;
 use Webware\MessageBus\MiddlewareInterface;
+use Webware\MessageBus\PipelineHandlerInterface;
 use Webware\MessageBus\ResultInterface;
 
 final class CommandPreHandleMiddleware implements MiddlewareInterface
@@ -35,12 +35,12 @@ final class CommandPreHandleMiddleware implements MiddlewareInterface
     #[Override]
     public function process(
         MessageInterface $message,
-        MessageHandlerInterface $handler,
+        PipelineHandlerInterface $next,
     ): ResultInterface {
         if ($message instanceof CommandInterface) {
             $this->eventDispatcher->dispatch(new CommandPreHandleEvent($message));
         }
 
-        return $handler->handle($message);
+        return $next->handle($message);
     }
 }

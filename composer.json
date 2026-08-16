@@ -36,7 +36,7 @@
         "laminas/laminas-servicemanager": "^4.0.0",
         "phly/phly-event-dispatcher": "^1.5.0",
         "php-standard-library/type": "^6.2",
-        "webware/message-bus": "^1.0.0",
+        "webware/message-bus": "2.0.x-dev",
         "webware/webware-psl-type": "^0.1.x-dev"
     },
     "require-dev": {

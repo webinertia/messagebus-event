@@ -11,7 +11,7 @@ use Psr\EventDispatcher\EventDispatcherInterface;
 use Webware\MessageBus\Command\CommandInterface;
 use Webware\MessageBus\Event\Command\CommandPreHandleEvent;
 use Webware\MessageBus\Event\Middleware\CommandPreHandleMiddleware;
-use Webware\MessageBus\MessageHandlerInterface;
+use Webware\MessageBus\PipelineHandlerInterface;
 use Webware\MessageBus\Query\QueryInterface;
 use Webware\MessageBus\ResultInterface;
 
@@ -34,7 +34,7 @@ final class CommandPreHandleMiddlewareTest extends TestCase
                 ),
             ));
 
-        $handler = $this->createMock(MessageHandlerInterface::class);
+        $handler = $this->createMock(PipelineHandlerInterface::class);
         $handler->expects($this->once())
             ->method('handle')
             ->with($command)
@@ -54,7 +54,7 @@ final class CommandPreHandleMiddlewareTest extends TestCase
         $eventDispatcher = $this->createMock(EventDispatcherInterface::class);
         $eventDispatcher->expects($this->never())->method('dispatch');
 
-        $handler = $this->createMock(MessageHandlerInterface::class);
+        $handler = $this->createMock(PipelineHandlerInterface::class);
         $handler->expects($this->once())
             ->method('handle')
             ->with($message)

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace WebwareTestAsset\MessageBus\Event;
 
 use LogicException;
-use Override;
 use Webware\MessageBus\Command\CommandInterface;
 use Webware\MessageBus\Command\CommandResult;
 use Webware\MessageBus\CommandHandlerInterface;
@@ -15,7 +14,6 @@ use Webware\MessageBus\ResultInterface;
 
 final class TestCommandHandler implements CommandHandlerInterface
 {
-    #[Override]
     public function handle(MessageInterface $message): ResultInterface
     {
         if (! $message instanceof CommandInterface) {

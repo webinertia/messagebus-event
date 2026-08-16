@@ -18,9 +18,9 @@ use Override;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Webware\MessageBus\Event\EventAwareInterface;
 use Webware\MessageBus\Event\Query\QueryPostHandleEvent;
-use Webware\MessageBus\MessageHandlerInterface;
 use Webware\MessageBus\MessageInterface;
 use Webware\MessageBus\MiddlewareInterface;
+use Webware\MessageBus\PipelineHandlerInterface;
 use Webware\MessageBus\Query\QueryResultInterface;
 use Webware\MessageBus\ResultInterface;
 
@@ -33,7 +33,7 @@ final readonly class QueryPostHandleMiddleware implements MiddlewareInterface
     #[Override]
     public function process(
         MessageInterface $message,
-        MessageHandlerInterface $handler,
+        PipelineHandlerInterface $next,
     ): ResultInterface {
         if ($message instanceof EventAwareInterface) {
             $event = $message->getEvent();
@@ -48,6 +48,6 @@ final readonly class QueryPostHandleMiddleware implements MiddlewareInterface
             return $message;
         }
 
-        return $handler->handle($message);
+        return $next->handle($message);
     }
 }

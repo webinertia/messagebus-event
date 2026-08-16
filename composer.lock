@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "628d5cf67a05912f2600a108c1397a49",
+    "content-hash": "be999de50dd02a09c8a833c2241af621",
     "packages": [
         {
             "name": "brick/varexporter",
@@ -955,16 +955,16 @@
         },
         {
             "name": "webware/message-bus",
-            "version": "1.0.0",
+            "version": "2.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webinertia/message-bus.git",
-                "reference": "2fbb097700a4c4652a93fa7901520f3407891ce1"
+                "reference": "6e88c4e4612f833fb41aab21887d5ed54782a54a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webinertia/message-bus/zipball/2fbb097700a4c4652a93fa7901520f3407891ce1",
-                "reference": "2fbb097700a4c4652a93fa7901520f3407891ce1",
+                "url": "https://api.github.com/repos/webinertia/message-bus/zipball/6e88c4e4612f833fb41aab21887d5ed54782a54a",
+                "reference": "6e88c4e4612f833fb41aab21887d5ed54782a54a",
                 "shasum": ""
             },
             "require": {
@@ -974,7 +974,6 @@
             "require-dev": {
                 "infection/infection": "^0.34.1",
                 "laminas/laminas-servicemanager": "^4.0.0",
-                "php-coveralls/php-coveralls": "^2.7",
                 "php-standard-library/type": "^6.2",
                 "phpbench/phpbench": "^1.7",
                 "phpunit/phpunit": "^12.5.30",
@@ -1015,7 +1014,7 @@
                 "issues": "https://github.com/webinertia/message-bus/issues",
                 "source": "https://github.com/webinertia/message-bus"
             },
-            "time": "2026-08-06T10:17:11+00:00"
+            "time": "2026-08-15T05:42:17+00:00"
         },
         {
             "name": "webware/webware-psl-type",
@@ -6294,6 +6293,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "roave/security-advisories": 20,
+        "webware/message-bus": 20,
         "webware/webware-psl-type": 20
     },
     "prefer-stable": true,

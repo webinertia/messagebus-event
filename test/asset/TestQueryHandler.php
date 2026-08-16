@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace WebwareTestAsset\MessageBus\Event;
 
 use LogicException;
-use Override;
 use Webware\MessageBus\MessageInterface;
 use Webware\MessageBus\MessageStatus;
 use Webware\MessageBus\Query\QueryInterface;
@@ -15,7 +14,6 @@ use Webware\MessageBus\ResultInterface;
 
 final class TestQueryHandler implements QueryHandlerInterface
 {
-    #[Override]
     public function handle(MessageInterface $message): ResultInterface
     {
         if (! $message instanceof QueryInterface) {
