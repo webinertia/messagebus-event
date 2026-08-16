@@ -19,9 +19,9 @@ use Psr\EventDispatcher\EventDispatcherInterface;
 use Webware\MessageBus\Command\CommandResultInterface;
 use Webware\MessageBus\Event\Command\CommandPostHandleEvent;
 use Webware\MessageBus\Event\EventAwareInterface;
-use Webware\MessageBus\MessageHandlerInterface;
 use Webware\MessageBus\MessageInterface;
 use Webware\MessageBus\MiddlewareInterface;
+use Webware\MessageBus\PipelineHandlerInterface;
 use Webware\MessageBus\ResultInterface;
 
 final readonly class CommandPostHandleMiddleware implements MiddlewareInterface
@@ -33,7 +33,7 @@ final readonly class CommandPostHandleMiddleware implements MiddlewareInterface
     #[Override]
     public function process(
         MessageInterface $message,
-        MessageHandlerInterface $handler,
+        PipelineHandlerInterface $next,
     ): ResultInterface {
         if ($message instanceof EventAwareInterface) {
             $event = $message->getEvent();
@@ -48,6 +48,6 @@ final readonly class CommandPostHandleMiddleware implements MiddlewareInterface
             return $message;
         }
 
-        return $handler->handle($message);
+        return $next->handle($message);
     }
 }

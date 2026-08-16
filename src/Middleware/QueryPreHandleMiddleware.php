@@ -17,9 +17,9 @@ namespace Webware\MessageBus\Event\Middleware;
 use Override;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Webware\MessageBus\Event\Query\QueryPreHandleEvent;
-use Webware\MessageBus\MessageHandlerInterface;
 use Webware\MessageBus\MessageInterface;
 use Webware\MessageBus\MiddlewareInterface;
+use Webware\MessageBus\PipelineHandlerInterface;
 use Webware\MessageBus\Query\QueryInterface;
 use Webware\MessageBus\ResultInterface;
 
@@ -32,12 +32,12 @@ final readonly class QueryPreHandleMiddleware implements MiddlewareInterface
     #[Override]
     public function process(
         MessageInterface $message,
-        MessageHandlerInterface $handler,
+        PipelineHandlerInterface $next,
     ): ResultInterface {
         if ($message instanceof QueryInterface) {
             $this->eventDispatcher->dispatch(new QueryPreHandleEvent($message));
         }
 
-        return $handler->handle($message);
+        return $next->handle($message);
     }
 }

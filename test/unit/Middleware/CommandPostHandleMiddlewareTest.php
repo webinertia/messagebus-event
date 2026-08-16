@@ -15,9 +15,9 @@ use Webware\MessageBus\Event\Command\CommandPostHandleEvent;
 use Webware\MessageBus\Event\EventAwareInterface;
 use Webware\MessageBus\Event\EventInterface;
 use Webware\MessageBus\Event\Middleware\CommandPostHandleMiddleware;
-use Webware\MessageBus\MessageHandlerInterface;
 use Webware\MessageBus\MessageInterface;
 use Webware\MessageBus\MessageStatus;
+use Webware\MessageBus\PipelineHandlerInterface;
 use Webware\MessageBus\ResultInterface;
 use Webware\MessageBus\StatusInterface;
 
@@ -70,7 +70,7 @@ final class CommandPostHandleMiddlewareTest extends TestCase
                 return $event;
             });
 
-        $handler = $this->createMock(MessageHandlerInterface::class);
+        $handler = $this->createMock(PipelineHandlerInterface::class);
         $handler->expects($this->never())->method('handle');
 
         $middleware = new CommandPostHandleMiddleware($eventDispatcher);
@@ -96,7 +96,7 @@ final class CommandPostHandleMiddlewareTest extends TestCase
                 ),
             ));
 
-        $handler = $this->createMock(MessageHandlerInterface::class);
+        $handler = $this->createMock(PipelineHandlerInterface::class);
         $handler->expects($this->never())->method('handle');
 
         $middleware = new CommandPostHandleMiddleware($eventDispatcher);
@@ -127,7 +127,7 @@ final class CommandPostHandleMiddlewareTest extends TestCase
             ->method('dispatch')
             ->with($ownEvent);
 
-        $handler = $this->createMock(MessageHandlerInterface::class);
+        $handler = $this->createMock(PipelineHandlerInterface::class);
         $handler->expects($this->once())
             ->method('handle')
             ->with($message)
@@ -154,7 +154,7 @@ final class CommandPostHandleMiddlewareTest extends TestCase
         $eventDispatcher = $this->createMock(EventDispatcherInterface::class);
         $eventDispatcher->expects($this->never())->method('dispatch');
 
-        $handler = $this->createMock(MessageHandlerInterface::class);
+        $handler = $this->createMock(PipelineHandlerInterface::class);
         $handler->expects($this->once())
             ->method('handle')
             ->with($message)
