@@ -72,10 +72,10 @@ final class ListenerProviderAggregateFactoryTest extends TestCase
         };
 
         $container = $this->buildContainer(
-            config: [
+            config      : [
                 ConfigProvider::LISTENER_PROVIDER_KEY => [$customProvider::class],
             ],
-            getMap: [$customProvider::class => $customProvider],
+            getMap      : [$customProvider::class => $customProvider],
             availableIds: [$customProvider::class],
         );
 
@@ -96,7 +96,7 @@ final class ListenerProviderAggregateFactoryTest extends TestCase
         };
 
         $container = $this->buildContainer(
-            config: [
+            config      : [
                 ConfigProvider::LISTENER_KEY => [
                     stdClass::class => [
                         ['listener' => 'low.listener', 'priority' => 1],
@@ -104,7 +104,7 @@ final class ListenerProviderAggregateFactoryTest extends TestCase
                     ],
                 ],
             ],
-            getMap: ['low.listener' => $low, 'high.listener' => $high],
+            getMap      : ['low.listener' => $low, 'high.listener' => $high],
             availableIds: ['low.listener', 'high.listener'],
         );
 
@@ -122,14 +122,14 @@ final class ListenerProviderAggregateFactoryTest extends TestCase
         };
 
         $container = $this->buildContainer(
-            config: [
+            config      : [
                 ConfigProvider::LISTENER_KEY => [
                     stdClass::class => [
                         ['listener' => 'my.listener'],
                     ],
                 ],
             ],
-            getMap: ['my.listener' => $listener],
+            getMap      : ['my.listener' => $listener],
             availableIds: ['my.listener'],
         );
 
@@ -147,12 +147,12 @@ final class ListenerProviderAggregateFactoryTest extends TestCase
         };
 
         $container = $this->buildContainer(
-            config: [
+            config      : [
                 ConfigProvider::LISTENER_KEY => [
                     stdClass::class => ['my.listener'],
                 ],
             ],
-            getMap: ['my.listener' => $listener],
+            getMap      : ['my.listener' => $listener],
             availableIds: ['my.listener'],
         );
 

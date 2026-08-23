@@ -1,9 +1,12 @@
-/.php-cs-fixer.cache
 /.phpunit.cache
-/.phpunit.result.cache
-/.phpstan-cache
-/phpstan.neon
+/phpbench.json
 /phpunit.xml
 /clover.xml
-/coveralls-upload.json
+/coverage.txt
+/coverage/
+/infection.json5
+/infection.log
+/summary.log
 /vendor/
+/.specify/
+/specs/
