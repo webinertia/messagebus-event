@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WebwareIntegrationTest\MessageBus\Event;
+namespace WebwareTestIntegration\MessageBus\Event;
 
 use Laminas\ServiceManager\ServiceManager;
 use Phly\EventDispatcher\EventDispatcher;
