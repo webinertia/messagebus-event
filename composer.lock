@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "acf27a6f49dcedc7b5d273de51ec8135",
+    "content-hash": "44b29233392d80d33e6e7806c8cb301e",
     "packages": [
         {
             "name": "brick/varexporter",
@@ -7019,16 +7019,16 @@
         },
         {
             "name": "webware/webware-tools",
-            "version": "0.1.x-dev",
+            "version": "1.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webinertia/webware-tools.git",
-                "reference": "ddd4faefb444543fd320364b3668fb9695dcc0d5"
+                "reference": "aef3f38bb67fde605669b50fb37442ea5b78bf9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webinertia/webware-tools/zipball/ddd4faefb444543fd320364b3668fb9695dcc0d5",
-                "reference": "ddd4faefb444543fd320364b3668fb9695dcc0d5",
+                "url": "https://api.github.com/repos/webinertia/webware-tools/zipball/aef3f38bb67fde605669b50fb37442ea5b78bf9c",
+                "reference": "aef3f38bb67fde605669b50fb37442ea5b78bf9c",
                 "shasum": ""
             },
             "require": {
@@ -7063,9 +7063,9 @@
             ],
             "support": {
                 "issues": "https://github.com/webinertia/webware-tools/issues",
-                "source": "https://github.com/webinertia/webware-tools/tree/0.1.x"
+                "source": "https://github.com/webinertia/webware-tools/tree/1.0.x"
             },
-            "time": "2026-08-22T23:11:25+00:00"
+            "time": "2026-09-19T00:39:45+00:00"
         }
     ],
     "aliases": [],

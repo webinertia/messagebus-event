@@ -27,7 +27,6 @@ final class CommandPostHandleMiddlewareTest extends TestCase
     #[Test]
     public function processDispatchesBothEventsWhenMessageIsEventAwareCommandResult(): void
     {
-        // @mago-expect lint:no-redundant-variable
         $command  = new class implements CommandInterface {};
         $ownEvent = $this->createStub(EventInterface::class);
 

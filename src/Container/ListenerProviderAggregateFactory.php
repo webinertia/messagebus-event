@@ -77,7 +77,7 @@ final class ListenerProviderAggregateFactory
                     $resolvedListener = null;
                     if (
                         ! is_callable($listener['listener'])
-                            && $container->has($listener['listener'])
+                        && $container->has($listener['listener'])
                     ) {
                         /** @var ListenerInterface $resolvedListener */
                         $resolvedListener = $container->get($listener['listener']);
