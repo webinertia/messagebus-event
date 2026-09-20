@@ -27,7 +27,6 @@ final class QueryPostHandleMiddlewareTest extends TestCase
     #[Test]
     public function processDispatchesBothEventsWhenMessageIsEventAwareQueryResult(): void
     {
-        // @mago-expect lint:no-redundant-variable
         $query    = new class implements QueryInterface {};
         $ownEvent = $this->createStub(EventInterface::class);
 

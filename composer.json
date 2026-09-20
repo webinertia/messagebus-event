@@ -45,7 +45,7 @@
         "phpbench/phpbench": "^1.7",
         "phpunit/phpunit": "^13.3.0",
         "roave/security-advisories": "dev-master",
-        "webware/webware-tools": "^0.1.x-dev"
+        "webware/webware-tools": "^1.0.0-beta.2"
     },
     "autoload": {
         "psr-4": {
