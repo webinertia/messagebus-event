@@ -14,9 +14,9 @@ declare(strict_types=1);
 
 namespace Webware\MessageBus\Event\Command;
 
+use Webware\Event\Event;
 use Webware\MessageBus\Command\CommandInterface;
 use Webware\MessageBus\Command\CommandResultInterface;
-use Webware\MessageBus\Event\Event;
 
 final class CommandPostHandleEvent extends Event
 {

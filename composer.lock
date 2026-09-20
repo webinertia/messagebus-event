@@ -4,274 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "440e660e94ec8bd3998b776922f2e82b",
+    "content-hash": "b92bee9a5b301f10130ac56ac61b5419",
     "packages": [
         {
-            "name": "brick/varexporter",
-            "version": "0.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/brick/varexporter.git",
-                "reference": "af98bfc2b702a312abbcaff37656dbe419cec5bc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/brick/varexporter/zipball/af98bfc2b702a312abbcaff37656dbe419cec5bc",
-                "reference": "af98bfc2b702a312abbcaff37656dbe419cec5bc",
-                "shasum": ""
-            },
-            "require": {
-                "nikic/php-parser": "^5.0",
-                "php": "^8.1"
-            },
-            "require-dev": {
-                "php-coveralls/php-coveralls": "^2.2",
-                "phpunit/phpunit": "^10.5",
-                "vimeo/psalm": "6.8.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Brick\\VarExporter\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "A powerful alternative to var_export(), which can export closures and objects without __set_state()",
-            "keywords": [
-                "var_export"
-            ],
-            "support": {
-                "issues": "https://github.com/brick/varexporter/issues",
-                "source": "https://github.com/brick/varexporter/tree/0.6.0"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/BenMorel",
-                    "type": "github"
-                }
-            ],
-            "time": "2025-02-20T17:42:39+00:00"
-        },
-        {
-            "name": "laminas/laminas-servicemanager",
-            "version": "4.5.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laminas/laminas-servicemanager.git",
-                "reference": "11192d588876ad04ba2988984c77b4ecb5c771c2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-servicemanager/zipball/11192d588876ad04ba2988984c77b4ecb5c771c2",
-                "reference": "11192d588876ad04ba2988984c77b4ecb5c771c2",
-                "shasum": ""
-            },
-            "require": {
-                "brick/varexporter": "^0.3.8 || ^0.4.0 || ^0.5.0 || ^0.6.0",
-                "laminas/laminas-stdlib": "^3.19",
-                "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
-                "psr/container": "^1.1 || ^2.0"
-            },
-            "conflict": {
-                "laminas/laminas-code": "<4.10.0",
-                "zendframework/zend-code": "<3.3.1"
-            },
-            "provide": {
-                "psr/container-implementation": "^1.0 || ^2.0"
-            },
-            "require-dev": {
-                "composer/package-versions-deprecated": "^1.11.99.5",
-                "friendsofphp/proxy-manager-lts": "^1.0.18",
-                "laminas/laminas-cli": "^1.11",
-                "laminas/laminas-coding-standard": "~3.1.0",
-                "laminas/laminas-container-config-test": "^1.1",
-                "mikey179/vfsstream": "^1.6.12",
-                "phpbench/phpbench": "^1.4.1",
-                "phpunit/phpunit": "^10.5.58",
-                "psalm/plugin-phpunit": "^0.19.5",
-                "symfony/console": "^6.4.17 || ^7.3.4",
-                "vimeo/psalm": "^6.13.1"
-            },
-            "suggest": {
-                "friendsofphp/proxy-manager-lts": "To handle lazy initialization of services",
-                "laminas/laminas-cli": "To consume CLI commands provided by this component"
-            },
-            "type": "library",
-            "extra": {
-                "laminas": {
-                    "module": "Laminas\\ServiceManager",
-                    "config-provider": "Laminas\\ServiceManager\\ConfigProvider"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Laminas\\ServiceManager\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Factory-Driven Dependency Injection Container",
-            "homepage": "https://laminas.dev",
-            "keywords": [
-                "PSR-11",
-                "dependency-injection",
-                "di",
-                "dic",
-                "laminas",
-                "service-manager",
-                "servicemanager"
-            ],
-            "support": {
-                "chat": "https://laminas.dev/chat",
-                "forum": "https://discourse.laminas.dev",
-                "issues": "https://github.com/laminas/laminas-servicemanager/issues",
-                "source": "https://github.com/laminas/laminas-servicemanager/tree/4.5.1"
-            },
-            "funding": [
-                {
-                    "url": "https://funding.communitybridge.org/projects/laminas-project",
-                    "type": "community_bridge"
-                }
-            ],
-            "time": "2026-05-12T09:53:32+00:00"
-        },
-        {
-            "name": "laminas/laminas-stdlib",
-            "version": "3.21.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laminas/laminas-stdlib.git",
-                "reference": "b1c81514cfe158aadf724c42b34d3d0a8164c096"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-stdlib/zipball/b1c81514cfe158aadf724c42b34d3d0a8164c096",
-                "reference": "b1c81514cfe158aadf724c42b34d3d0a8164c096",
-                "shasum": ""
-            },
-            "require": {
-                "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0"
-            },
-            "conflict": {
-                "zendframework/zend-stdlib": "*"
-            },
-            "require-dev": {
-                "laminas/laminas-coding-standard": "^3.1.0",
-                "phpbench/phpbench": "^1.4.1",
-                "phpunit/phpunit": "^11.5.42",
-                "psalm/plugin-phpunit": "^0.19.5",
-                "vimeo/psalm": "^6.13.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Laminas\\Stdlib\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "SPL extensions, array utilities, error handlers, and more",
-            "homepage": "https://laminas.dev",
-            "keywords": [
-                "laminas",
-                "stdlib"
-            ],
-            "support": {
-                "chat": "https://laminas.dev/chat",
-                "docs": "https://docs.laminas.dev/laminas-stdlib/",
-                "forum": "https://discourse.laminas.dev",
-                "issues": "https://github.com/laminas/laminas-stdlib/issues",
-                "rss": "https://github.com/laminas/laminas-stdlib/releases.atom",
-                "source": "https://github.com/laminas/laminas-stdlib"
-            },
-            "funding": [
-                {
-                    "url": "https://funding.communitybridge.org/projects/laminas-project",
-                    "type": "community_bridge"
-                }
-            ],
-            "time": "2025-10-11T18:13:12+00:00"
-        },
-        {
-            "name": "nikic/php-parser",
-            "version": "v5.8.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "044a6a392ff8ad0d61f14370a5fbbd0a0107152f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/044a6a392ff8ad0d61f14370a5fbbd0a0107152f",
-                "reference": "044a6a392ff8ad0d61f14370a5fbbd0a0107152f",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "ext-tokenizer": "*",
-                "php": ">=7.4"
-            },
-            "require-dev": {
-                "ircmaxell/php-yacc": "^0.0.7",
-                "phpunit/phpunit": "^9.0"
-            },
-            "bin": [
-                "bin/php-parse"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "5.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "PhpParser\\": "lib/PhpParser"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Nikita Popov"
-                }
-            ],
-            "description": "A PHP parser written in PHP",
-            "keywords": [
-                "parser",
-                "php"
-            ],
-            "support": {
-                "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v5.8.0"
-            },
-            "time": "2026-07-04T14:30:18+00:00"
-        },
-        {
             "name": "phly/phly-event-dispatcher",
-            "version": "1.5.0",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phly/phly-event-dispatcher.git",
-                "reference": "0a1b0aa21ace0f6f6736db71cdd3a3580fd9f481"
+                "reference": "09b86c00d16e34b5d33123191cb613307ff54be7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phly/phly-event-dispatcher/zipball/0a1b0aa21ace0f6f6736db71cdd3a3580fd9f481",
-                "reference": "0a1b0aa21ace0f6f6736db71cdd3a3580fd9f481",
+                "url": "https://api.github.com/repos/phly/phly-event-dispatcher/zipball/09b86c00d16e34b5d33123191cb613307ff54be7",
+                "reference": "09b86c00d16e34b5d33123191cb613307ff54be7",
                 "shasum": ""
             },
             "require": {
-                "php": "~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0",
+                "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
                 "psr/container": "^1.0 || ^2.0",
                 "psr/event-dispatcher": "^1.0"
             },
@@ -315,540 +65,7 @@
                 "rss": "https://github.com/phly/phly-event-dispatcher/releases.atom",
                 "source": "https://github.com/phly/phly-event-dispatcher"
             },
-            "time": "2024-11-25T21:57:14+00:00"
-        },
-        {
-            "name": "php-standard-library/collection",
-            "version": "6.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-standard-library/collection.git",
-                "reference": "0e8b757a16ccb1f68a70f4ada8565099743d50b9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-standard-library/collection/zipball/0e8b757a16ccb1f68a70f4ada8565099743d50b9",
-                "reference": "0e8b757a16ccb1f68a70f4ada8565099743d50b9",
-                "shasum": ""
-            },
-            "require": {
-                "php": "~8.4.0 || ~8.5.0",
-                "php-standard-library/default": "^6.0",
-                "php-standard-library/foundation": "^6.0"
-            },
-            "conflict": {
-                "azjezz/psl": "*"
-            },
-            "require-dev": {
-                "php-standard-library/str": "^6.0",
-                "php-standard-library/vec": "^6.0",
-                "phpunit/phpunit": "^13.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-next": "6.2.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Psl\\Collection\\": "src/Psl/Collection/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Seifeddine Gmati",
-                    "email": "azjezz@carthage.software"
-                },
-                {
-                    "name": "Contributors",
-                    "homepage": "https://github.com/php-standard-library/php-standard-library/graphs/contributors"
-                }
-            ],
-            "description": "Generic, object-oriented Vector, Map, and Set collections with immutable and mutable variants",
-            "homepage": "https://php-standard-library.dev",
-            "keywords": [
-                "collection",
-                "generics",
-                "map",
-                "set",
-                "vector"
-            ],
-            "support": {
-                "source": "https://github.com/php-standard-library/collection/tree/6.2.1"
-            },
-            "time": "2026-05-18T22:19:21+00:00"
-        },
-        {
-            "name": "php-standard-library/comparison",
-            "version": "6.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-standard-library/comparison.git",
-                "reference": "1884e2218c231c285b6039e9b2010f5dd956ae20"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-standard-library/comparison/zipball/1884e2218c231c285b6039e9b2010f5dd956ae20",
-                "reference": "1884e2218c231c285b6039e9b2010f5dd956ae20",
-                "shasum": ""
-            },
-            "require": {
-                "php": "~8.4.0 || ~8.5.0",
-                "php-standard-library/default": "^6.0",
-                "php-standard-library/foundation": "^6.0"
-            },
-            "conflict": {
-                "azjezz/psl": "*"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^13.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-next": "6.2.x-dev"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/Psl/bootstrap.php"
-                ],
-                "psr-4": {
-                    "Psl\\Comparison\\": "src/Psl/Comparison/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Seifeddine Gmati",
-                    "email": "azjezz@carthage.software"
-                },
-                {
-                    "name": "Contributors",
-                    "homepage": "https://github.com/php-standard-library/php-standard-library/graphs/contributors"
-                }
-            ],
-            "description": "Interfaces and functions for type-safe, consistent value comparison",
-            "homepage": "https://php-standard-library.dev",
-            "keywords": [
-                "comparable",
-                "comparison",
-                "ordering"
-            ],
-            "support": {
-                "source": "https://github.com/php-standard-library/comparison/tree/6.2.1"
-            },
-            "time": "2026-03-28T18:39:47+00:00"
-        },
-        {
-            "name": "php-standard-library/default",
-            "version": "6.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-standard-library/default.git",
-                "reference": "89f05ec6e6a29e8c07de7b6755d14d05b06048e2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-standard-library/default/zipball/89f05ec6e6a29e8c07de7b6755d14d05b06048e2",
-                "reference": "89f05ec6e6a29e8c07de7b6755d14d05b06048e2",
-                "shasum": ""
-            },
-            "require": {
-                "php": "~8.4.0 || ~8.5.0"
-            },
-            "conflict": {
-                "azjezz/psl": "*"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^13.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-next": "6.2.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Psl\\Default\\": "src/Psl/Default/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Seifeddine Gmati",
-                    "email": "azjezz@carthage.software"
-                },
-                {
-                    "name": "Contributors",
-                    "homepage": "https://github.com/php-standard-library/php-standard-library/graphs/contributors"
-                }
-            ],
-            "description": "DefaultInterface for classes to provide standardized default instances",
-            "homepage": "https://php-standard-library.dev",
-            "keywords": [
-                "default",
-                "interface"
-            ],
-            "support": {
-                "source": "https://github.com/php-standard-library/default/tree/6.2.1"
-            },
-            "time": "2026-03-28T18:39:47+00:00"
-        },
-        {
-            "name": "php-standard-library/either-or-both",
-            "version": "6.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-standard-library/either-or-both.git",
-                "reference": "a1f4d80ee5ee616272688941390d2eae2d1948e6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-standard-library/either-or-both/zipball/a1f4d80ee5ee616272688941390d2eae2d1948e6",
-                "reference": "a1f4d80ee5ee616272688941390d2eae2d1948e6",
-                "shasum": ""
-            },
-            "require": {
-                "php": "~8.4.0 || ~8.5.0",
-                "php-standard-library/comparison": "^6.0",
-                "php-standard-library/foundation": "^6.0",
-                "php-standard-library/option": "^6.0"
-            },
-            "conflict": {
-                "azjezz/psl": "*"
-            },
-            "require-dev": {
-                "php-standard-library/str": "^6.0",
-                "phpunit/phpunit": "^13.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-next": "6.2.x-dev"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/Psl/bootstrap.php"
-                ],
-                "psr-4": {
-                    "Psl\\EitherOrBoth\\": "src/Psl/EitherOrBoth/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Seifeddine Gmati",
-                    "email": "azjezz@carthage.software"
-                },
-                {
-                    "name": "Contributors",
-                    "homepage": "https://github.com/php-standard-library/php-standard-library/graphs/contributors"
-                }
-            ],
-            "description": "Three-variant disjoint union type (Left/Right/Both) for values that may be present on either or both of two sides",
-            "homepage": "https://php-standard-library.dev",
-            "keywords": [
-                "both",
-                "either",
-                "either-or-both",
-                "these",
-                "union-type"
-            ],
-            "support": {
-                "source": "https://github.com/php-standard-library/either-or-both/tree/6.2.1"
-            },
-            "time": "2026-05-23T20:26:52+00:00"
-        },
-        {
-            "name": "php-standard-library/foundation",
-            "version": "6.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-standard-library/foundation.git",
-                "reference": "7f65cec48c8ed3d53dc8dd7643796e2ba6de6008"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-standard-library/foundation/zipball/7f65cec48c8ed3d53dc8dd7643796e2ba6de6008",
-                "reference": "7f65cec48c8ed3d53dc8dd7643796e2ba6de6008",
-                "shasum": ""
-            },
-            "require": {
-                "php": "~8.4.0 || ~8.5.0"
-            },
-            "conflict": {
-                "azjezz/psl": "*"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^13.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-next": "6.2.x-dev"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/Psl/bootstrap.php"
-                ],
-                "psr-4": {
-                    "Psl\\": "src/Psl/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Seifeddine Gmati",
-                    "email": "azjezz@carthage.software"
-                },
-                {
-                    "name": "Contributors",
-                    "homepage": "https://github.com/php-standard-library/php-standard-library/graphs/contributors"
-                }
-            ],
-            "description": "Exceptions, Ref, and invariant functions",
-            "homepage": "https://php-standard-library.dev",
-            "keywords": [
-                "exceptions",
-                "foundation",
-                "invariant"
-            ],
-            "support": {
-                "source": "https://github.com/php-standard-library/foundation/tree/6.2.1"
-            },
-            "time": "2026-04-28T06:28:49+00:00"
-        },
-        {
-            "name": "php-standard-library/iter",
-            "version": "6.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-standard-library/iter.git",
-                "reference": "d3f2db3adec4cbe5129f3428969ae8508a54aeb7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-standard-library/iter/zipball/d3f2db3adec4cbe5129f3428969ae8508a54aeb7",
-                "reference": "d3f2db3adec4cbe5129f3428969ae8508a54aeb7",
-                "shasum": ""
-            },
-            "require": {
-                "php": "~8.4.0 || ~8.5.0",
-                "php-standard-library/comparison": "^6.0",
-                "php-standard-library/either-or-both": "^6.0",
-                "php-standard-library/foundation": "^6.0",
-                "php-standard-library/option": "^6.0"
-            },
-            "conflict": {
-                "azjezz/psl": "*"
-            },
-            "require-dev": {
-                "php-standard-library/collection": "^6.0",
-                "php-standard-library/dict": "^6.0",
-                "php-standard-library/math": "^6.0",
-                "php-standard-library/vec": "^6.0",
-                "phpunit/phpunit": "^13.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-next": "6.2.x-dev"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/Psl/bootstrap.php"
-                ],
-                "psr-4": {
-                    "Psl\\Iter\\": "src/Psl/Iter/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Seifeddine Gmati",
-                    "email": "azjezz@carthage.software"
-                },
-                {
-                    "name": "Contributors",
-                    "homepage": "https://github.com/php-standard-library/php-standard-library/graphs/contributors"
-                }
-            ],
-            "description": "Utility functions for inspecting and reducing iterables - arrays, generators, and iterators",
-            "homepage": "https://php-standard-library.dev",
-            "keywords": [
-                "generator",
-                "iter",
-                "iterable",
-                "iterator"
-            ],
-            "support": {
-                "source": "https://github.com/php-standard-library/iter/tree/6.2.1"
-            },
-            "time": "2026-04-28T06:28:49+00:00"
-        },
-        {
-            "name": "php-standard-library/option",
-            "version": "6.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-standard-library/option.git",
-                "reference": "afe2059dbb3a9e2e3ba6edd371ccbb7d87355a66"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-standard-library/option/zipball/afe2059dbb3a9e2e3ba6edd371ccbb7d87355a66",
-                "reference": "afe2059dbb3a9e2e3ba6edd371ccbb7d87355a66",
-                "shasum": ""
-            },
-            "require": {
-                "php": "~8.4.0 || ~8.5.0",
-                "php-standard-library/comparison": "^6.0",
-                "php-standard-library/foundation": "^6.0"
-            },
-            "conflict": {
-                "azjezz/psl": "*"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^13.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-next": "6.2.x-dev"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/Psl/bootstrap.php"
-                ],
-                "psr-4": {
-                    "Psl\\Option\\": "src/Psl/Option/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Seifeddine Gmati",
-                    "email": "azjezz@carthage.software"
-                },
-                {
-                    "name": "Contributors",
-                    "homepage": "https://github.com/php-standard-library/php-standard-library/graphs/contributors"
-                }
-            ],
-            "description": "Option type (Some/None) replacing nullable types with explicit presence semantics",
-            "homepage": "https://php-standard-library.dev",
-            "keywords": [
-                "monad",
-                "none",
-                "option",
-                "some"
-            ],
-            "support": {
-                "source": "https://github.com/php-standard-library/option/tree/6.2.1"
-            },
-            "time": "2026-05-23T20:26:52+00:00"
-        },
-        {
-            "name": "php-standard-library/type",
-            "version": "6.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-standard-library/type.git",
-                "reference": "ffc050e32bc5def0e03aaae3d52c78dfc746e143"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-standard-library/type/zipball/ffc050e32bc5def0e03aaae3d52c78dfc746e143",
-                "reference": "ffc050e32bc5def0e03aaae3d52c78dfc746e143",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "php": "~8.4.0 || ~8.5.0",
-                "php-standard-library/collection": "^6.0",
-                "php-standard-library/foundation": "^6.0",
-                "php-standard-library/iter": "^6.0"
-            },
-            "conflict": {
-                "azjezz/psl": "*"
-            },
-            "require-dev": {
-                "php-standard-library/dict": "^6.0",
-                "php-standard-library/math": "^6.0",
-                "php-standard-library/result": "^6.0",
-                "php-standard-library/str": "^6.0",
-                "php-standard-library/vec": "^6.0",
-                "phpunit/phpunit": "^13.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-next": "6.2.x-dev"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/Psl/bootstrap.php"
-                ],
-                "psr-4": {
-                    "Psl\\Type\\": "src/Psl/Type/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Seifeddine Gmati",
-                    "email": "azjezz@carthage.software"
-                },
-                {
-                    "name": "Contributors",
-                    "homepage": "https://github.com/php-standard-library/php-standard-library/graphs/contributors"
-                }
-            ],
-            "description": "Runtime type validation implementing Parse, Don't Validate - coerce and assert unstructured input into well-typed data",
-            "homepage": "https://php-standard-library.dev",
-            "keywords": [
-                "coercion",
-                "type",
-                "type-safety",
-                "validation"
-            ],
-            "support": {
-                "source": "https://github.com/php-standard-library/type/tree/6.2.1"
-            },
-            "time": "2026-05-23T20:26:52+00:00"
+            "time": "2026-09-09T16:22:59+00:00"
         },
         {
             "name": "psr/container",
@@ -954,17 +171,183 @@
             "time": "2019-01-08T18:20:26+00:00"
         },
         {
+            "name": "psr/http-message",
+            "version": "2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-message.git",
+                "reference": "402d35bcb92c70c026d1a6a9883f06b2ead23d71"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/402d35bcb92c70c026d1a6a9883f06b2ead23d71",
+                "reference": "402d35bcb92c70c026d1a6a9883f06b2ead23d71",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2 || ^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Message\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP messages",
+            "homepage": "https://github.com/php-fig/http-message",
+            "keywords": [
+                "http",
+                "http-message",
+                "psr",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/http-message/tree/2.0"
+            },
+            "time": "2023-04-04T09:54:51+00:00"
+        },
+        {
+            "name": "psr/http-server-handler",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-server-handler.git",
+                "reference": "84c4fb66179be4caaf8e97bd239203245302e7d4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-server-handler/zipball/84c4fb66179be4caaf8e97bd239203245302e7d4",
+                "reference": "84c4fb66179be4caaf8e97bd239203245302e7d4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0",
+                "psr/http-message": "^1.0 || ^2.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Server\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP server-side request handler",
+            "keywords": [
+                "handler",
+                "http",
+                "http-interop",
+                "psr",
+                "psr-15",
+                "psr-7",
+                "request",
+                "response",
+                "server"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/http-server-handler/tree/1.0.2"
+            },
+            "time": "2023-04-10T20:06:20+00:00"
+        },
+        {
+            "name": "psr/http-server-middleware",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-server-middleware.git",
+                "reference": "c1481f747daaa6a0782775cd6a8c26a1bf4a3829"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-server-middleware/zipball/c1481f747daaa6a0782775cd6a8c26a1bf4a3829",
+                "reference": "c1481f747daaa6a0782775cd6a8c26a1bf4a3829",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0",
+                "psr/http-message": "^1.0 || ^2.0",
+                "psr/http-server-handler": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Server\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP server-side middleware",
+            "keywords": [
+                "http",
+                "http-interop",
+                "middleware",
+                "psr",
+                "psr-15",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "support": {
+                "issues": "https://github.com/php-fig/http-server-middleware/issues",
+                "source": "https://github.com/php-fig/http-server-middleware/tree/1.0.2"
+            },
+            "time": "2023-04-11T06:14:47+00:00"
+        },
+        {
             "name": "webware/message-bus",
             "version": "2.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webinertia/message-bus.git",
-                "reference": "6e88c4e4612f833fb41aab21887d5ed54782a54a"
+                "reference": "299a4541f29e3d6baf80cffdfd813ebfddbfdd2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webinertia/message-bus/zipball/6e88c4e4612f833fb41aab21887d5ed54782a54a",
-                "reference": "6e88c4e4612f833fb41aab21887d5ed54782a54a",
+                "url": "https://api.github.com/repos/webinertia/message-bus/zipball/299a4541f29e3d6baf80cffdfd813ebfddbfdd2a",
+                "reference": "299a4541f29e3d6baf80cffdfd813ebfddbfdd2a",
                 "shasum": ""
             },
             "require": {
@@ -972,13 +355,14 @@
                 "psr/container": "^2.0"
             },
             "require-dev": {
-                "infection/infection": "^0.34.1",
+                "infection/infection": "^0.35.0",
                 "laminas/laminas-servicemanager": "^4.0.0",
                 "php-standard-library/type": "^6.2",
                 "phpbench/phpbench": "^1.7",
-                "phpunit/phpunit": "^12.5.30",
+                "phpunit/phpunit": "^13.3.0",
                 "roave/backward-compatibility-check": "^8.21.0",
-                "roave/security-advisories": "dev-master"
+                "roave/security-advisories": "dev-master",
+                "webware/webware-tools": "^0.1.x-dev"
             },
             "suggest": {
                 "laminas/laminas-servicemanager": "Laminas\\ServiceManager component"
@@ -1015,54 +399,119 @@
                 "issues": "https://github.com/webinertia/message-bus/issues",
                 "source": "https://github.com/webinertia/message-bus"
             },
-            "time": "2026-08-15T05:42:17+00:00"
+            "time": "2026-09-16T11:21:17+00:00"
         },
         {
-            "name": "webware/webware-psl-type",
-            "version": "0.1.x-dev",
+            "name": "webware/webware-event",
+            "version": "1.0.0-alpha.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/webinertia/webware-psl-type.git",
-                "reference": "adb577d24dade1c514b5d3d88475122143b3f944"
+                "url": "https://github.com/webinertia/webware-event.git",
+                "reference": "d451163005c1da23618f530168260cea29f443f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webinertia/webware-psl-type/zipball/adb577d24dade1c514b5d3d88475122143b3f944",
-                "reference": "adb577d24dade1c514b5d3d88475122143b3f944",
+                "url": "https://api.github.com/repos/webinertia/webware-event/zipball/d451163005c1da23618f530168260cea29f443f8",
+                "reference": "d451163005c1da23618f530168260cea29f443f8",
                 "shasum": ""
             },
+            "require": {
+                "phly/phly-event-dispatcher": "^1.5.0",
+                "php": "~8.4.1 || ~8.5.0",
+                "psr/http-message": "^2.0",
+                "psr/http-server-handler": "^1.0",
+                "psr/http-server-middleware": "^1.0"
+            },
             "require-dev": {
-                "php-standard-library/type": "^6.2",
-                "phpunit/phpunit": "^12.0.0"
+                "infection/infection": "^0.35.0",
+                "laminas/laminas-servicemanager": "^4.5",
+                "phpbench/phpbench": "^1.7",
+                "phpunit/phpunit": "^13.3.0",
+                "roave/backward-compatibility-check": "^8.21.0",
+                "roave/security-advisories": "dev-master",
+                "webware/webware-tools": "^1.0.0-beta.2"
             },
             "type": "library",
             "autoload": {
-                "files": [
-                    "src/Psl/bootstrap.php"
-                ],
                 "psr-4": {
-                    "Psl\\Type\\": "src/Psl/Type/"
+                    "Webware\\Event\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Joey Smith",
+                    "email": "jsmith@webinertia.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Event system for Webware",
+            "keywords": [
+                "dispatcher",
+                "event",
+                "psr-14",
+                "webware"
+            ],
+            "support": {
+                "issues": "https://github.com/webinertia/webware-event/issues",
+                "source": "https://github.com/webinertia/webware-event/tree/1.0.0-alpha.2"
+            },
+            "time": "2026-09-20T03:10:54+00:00"
+        }
+    ],
+    "packages-dev": [
+        {
+            "name": "brick/varexporter",
+            "version": "0.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/brick/varexporter.git",
+                "reference": "af98bfc2b702a312abbcaff37656dbe419cec5bc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/brick/varexporter/zipball/af98bfc2b702a312abbcaff37656dbe419cec5bc",
+                "reference": "af98bfc2b702a312abbcaff37656dbe419cec5bc",
+                "shasum": ""
+            },
+            "require": {
+                "nikic/php-parser": "^5.0",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "php-coveralls/php-coveralls": "^2.2",
+                "phpunit/phpunit": "^10.5",
+                "vimeo/psalm": "6.8.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Brick\\VarExporter\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
-            "authors": [
+            "description": "A powerful alternative to var_export(), which can export closures and objects without __set_state()",
+            "keywords": [
+                "var_export"
+            ],
+            "support": {
+                "issues": "https://github.com/brick/varexporter/issues",
+                "source": "https://github.com/brick/varexporter/tree/0.6.0"
+            },
+            "funding": [
                 {
-                    "name": "Joey Smith",
-                    "email": "jsmith@webinertia.net"
+                    "url": "https://github.com/BenMorel",
+                    "type": "github"
                 }
             ],
-            "description": "Custom Types for Psl",
-            "support": {
-                "issues": "https://github.com/webinertia/webware-psl-type/issues",
-                "source": "https://github.com/webinertia/webware-psl-type/tree/0.1.x"
-            },
-            "time": "2026-08-04T16:09:09+00:00"
-        }
-    ],
-    "packages-dev": [
+            "time": "2025-02-20T17:42:39+00:00"
+        },
         {
             "name": "colinodell/json5",
             "version": "v3.0.0",
@@ -1946,6 +1395,150 @@
             "time": "2026-08-21T10:30:42+00:00"
         },
         {
+            "name": "laminas/laminas-servicemanager",
+            "version": "4.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-servicemanager.git",
+                "reference": "11192d588876ad04ba2988984c77b4ecb5c771c2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-servicemanager/zipball/11192d588876ad04ba2988984c77b4ecb5c771c2",
+                "reference": "11192d588876ad04ba2988984c77b4ecb5c771c2",
+                "shasum": ""
+            },
+            "require": {
+                "brick/varexporter": "^0.3.8 || ^0.4.0 || ^0.5.0 || ^0.6.0",
+                "laminas/laminas-stdlib": "^3.19",
+                "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
+                "psr/container": "^1.1 || ^2.0"
+            },
+            "conflict": {
+                "laminas/laminas-code": "<4.10.0",
+                "zendframework/zend-code": "<3.3.1"
+            },
+            "provide": {
+                "psr/container-implementation": "^1.0 || ^2.0"
+            },
+            "require-dev": {
+                "composer/package-versions-deprecated": "^1.11.99.5",
+                "friendsofphp/proxy-manager-lts": "^1.0.18",
+                "laminas/laminas-cli": "^1.11",
+                "laminas/laminas-coding-standard": "~3.1.0",
+                "laminas/laminas-container-config-test": "^1.1",
+                "mikey179/vfsstream": "^1.6.12",
+                "phpbench/phpbench": "^1.4.1",
+                "phpunit/phpunit": "^10.5.58",
+                "psalm/plugin-phpunit": "^0.19.5",
+                "symfony/console": "^6.4.17 || ^7.3.4",
+                "vimeo/psalm": "^6.13.1"
+            },
+            "suggest": {
+                "friendsofphp/proxy-manager-lts": "To handle lazy initialization of services",
+                "laminas/laminas-cli": "To consume CLI commands provided by this component"
+            },
+            "type": "library",
+            "extra": {
+                "laminas": {
+                    "module": "Laminas\\ServiceManager",
+                    "config-provider": "Laminas\\ServiceManager\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laminas\\ServiceManager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Factory-Driven Dependency Injection Container",
+            "homepage": "https://laminas.dev",
+            "keywords": [
+                "PSR-11",
+                "dependency-injection",
+                "di",
+                "dic",
+                "laminas",
+                "service-manager",
+                "servicemanager"
+            ],
+            "support": {
+                "chat": "https://laminas.dev/chat",
+                "forum": "https://discourse.laminas.dev",
+                "issues": "https://github.com/laminas/laminas-servicemanager/issues",
+                "source": "https://github.com/laminas/laminas-servicemanager/tree/4.5.1"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2026-05-12T09:53:32+00:00"
+        },
+        {
+            "name": "laminas/laminas-stdlib",
+            "version": "3.21.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-stdlib.git",
+                "reference": "b1c81514cfe158aadf724c42b34d3d0a8164c096"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-stdlib/zipball/b1c81514cfe158aadf724c42b34d3d0a8164c096",
+                "reference": "b1c81514cfe158aadf724c42b34d3d0a8164c096",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0"
+            },
+            "conflict": {
+                "zendframework/zend-stdlib": "*"
+            },
+            "require-dev": {
+                "laminas/laminas-coding-standard": "^3.1.0",
+                "phpbench/phpbench": "^1.4.1",
+                "phpunit/phpunit": "^11.5.42",
+                "psalm/plugin-phpunit": "^0.19.5",
+                "vimeo/psalm": "^6.13.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Laminas\\Stdlib\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "SPL extensions, array utilities, error handlers, and more",
+            "homepage": "https://laminas.dev",
+            "keywords": [
+                "laminas",
+                "stdlib"
+            ],
+            "support": {
+                "chat": "https://laminas.dev/chat",
+                "docs": "https://docs.laminas.dev/laminas-stdlib/",
+                "forum": "https://discourse.laminas.dev",
+                "issues": "https://github.com/laminas/laminas-stdlib/issues",
+                "rss": "https://github.com/laminas/laminas-stdlib/releases.atom",
+                "source": "https://github.com/laminas/laminas-stdlib"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2025-10-11T18:13:12+00:00"
+        },
+        {
             "name": "marc-mabe/php-enum",
             "version": "v4.7.2",
             "source": {
@@ -2077,6 +1670,63 @@
                 }
             ],
             "time": "2026-08-11T10:17:44+00:00"
+        },
+        {
+            "name": "nikic/php-parser",
+            "version": "v5.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nikic/PHP-Parser.git",
+                "reference": "9e33da9553fe7786f0962b35f4e4ecf01be89def"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/9e33da9553fe7786f0962b35f4e4ecf01be89def",
+                "reference": "9e33da9553fe7786f0962b35f4e4ecf01be89def",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-tokenizer": "*",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "ircmaxell/php-yacc": "^0.0.7",
+                "phpunit/phpunit": "^9.0"
+            },
+            "bin": [
+                "bin/php-parse"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PhpParser\\": "lib/PhpParser"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Nikita Popov"
+                }
+            ],
+            "description": "A PHP parser written in PHP",
+            "keywords": [
+                "parser",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/nikic/PHP-Parser/issues",
+                "source": "https://github.com/nikic/PHP-Parser/tree/v5.9.0"
+            },
+            "time": "2026-09-13T18:51:52+00:00"
         },
         {
             "name": "ondram/ci-detector",
@@ -7071,8 +6721,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "roave/security-advisories": 20,
-        "webware/message-bus": 20,
-        "webware/webware-psl-type": 20
+        "webware/message-bus": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

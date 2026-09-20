@@ -12,11 +12,12 @@ use Phly\EventDispatcher\ListenerProvider\PrioritizedListenerProvider;
 use PHPUnit\Framework\Attributes\CoversNothing;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use Webware\Event\ConfigProvider as EventConfigProvider;
 use Webware\MessageBus\Command\CommandResultInterface;
 use Webware\MessageBus\ConfigProvider as BusConfigProvider;
 use Webware\MessageBus\Event\Command\CommandPostHandleEvent;
 use Webware\MessageBus\Event\Command\CommandPreHandleEvent;
-use Webware\MessageBus\Event\ConfigProvider as EventConfigProvider;
+use Webware\MessageBus\Event\ConfigProvider as EventMiddlewareConfigProvider;
 use Webware\MessageBus\MessageBusInterface;
 use WebwareTestAsset\MessageBus\Event\RecordingListener;
 use WebwareTestAsset\MessageBus\Event\TestCommand;
@@ -28,18 +29,20 @@ final class LaminasServiceManagerCommandPipelineTest extends TestCase
     #[Test]
     public function defaultPipelineDispatchesCommandPreAndPostHandleEvents(): void
     {
-        $busConfig   = (new BusConfigProvider())();
-        $eventConfig = (new EventConfigProvider())();
+        $busConfig    = (new BusConfigProvider())();
+        $eventConfig  = (new EventMiddlewareConfigProvider())();
+        $wiringConfig = (new EventConfigProvider())();
 
         $container = new ServiceManager([
             'factories'  => [
                 ...$busConfig['dependencies']['factories'],
                 ...$eventConfig['dependencies']['factories'],
+                ...$wiringConfig['dependencies']['factories'],
                 EventDispatcher::class => EventDispatcherFactory::class,
             ],
             'aliases'    => [
                 ...$busConfig['dependencies']['aliases'],
-                ...$eventConfig['dependencies']['aliases'],
+                ...$wiringConfig['dependencies']['aliases'],
             ],
             'invokables' => [
                 ...$busConfig['dependencies']['invokables'],

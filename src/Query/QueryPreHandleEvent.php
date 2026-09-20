@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace Webware\MessageBus\Event\Query;
 
-use Webware\MessageBus\Event\Event;
+use Webware\Event\Event;
 use Webware\MessageBus\Query\QueryInterface;
 
 final class QueryPreHandleEvent extends Event

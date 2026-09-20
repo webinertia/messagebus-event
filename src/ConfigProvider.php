@@ -14,50 +14,27 @@ declare(strict_types=1);
 
 namespace Webware\MessageBus\Event;
 
-use Phly\EventDispatcher\EventDispatcher;
-use Phly\EventDispatcher\ListenerProvider\ListenerProviderAggregate;
-use Psr\EventDispatcher\EventDispatcherInterface;
-use Psr\EventDispatcher\ListenerProviderInterface;
+use Webware\Event\ConfigProvider as EventProvider;
 use Webware\MessageBus\ConfigProvider as BusProvider;
 use Webware\MessageBus\MessageBusInterface;
 
 /**
+ * The dispatcher, the listener provider aggregate and the config keys belong to
+ * the centre: this package consumes `Webware\Event\ConfigProvider` for all three
+ * and contributes only its own middleware wiring.
+ *
+ * @import-type ConfigShape from EventProvider
  * @import-type MiddlewarePipeline from BusProvider
- * @type Dependencies = array{
- *     aliases: array<class-string, class-string>,
- *     factories: array<class-string, class-string>,
- * }
- * @type ListenerConfig = array<class-string, array<int, string|array{listener: callable|class-string, priority?: int}>>
- * @type ListenerProviderConfig = array<class-string>
- * @type ProviderConfig = array{
- *      'dependencies': array{
- *          'aliases': array<class-string, class-string>,
- *          'factories': array<class-string, class-string>
- *      },
- *      'listener_providers': array{},
- *      'listeners': array{},
- *      Webware\MessageBus\MessageBusInterface: array{
- *          'middleware_pipeline': array<array-key, array{'middleware': class-string, 'priority'?: int}>
- *      }
- * }
+ * @type Dependencies = array{factories: array<class-string, class-string>}
  * @api
  */
 final readonly class ConfigProvider
 {
-    public const string LISTENER_KEY = 'listeners';
-
-    public const string LISTENER_PROVIDER_KEY = 'listener_providers';
-
     /** @return Dependencies */
     private function getDependencies(): array
     {
         return [
-            'aliases'   => [
-                EventDispatcherInterface::class  => EventDispatcher::class,
-                ListenerProviderInterface::class => ListenerProviderAggregate::class,
-            ],
             'factories' => [
-                ListenerProviderAggregate::class              => Container\ListenerProviderAggregateFactory::class,
                 Middleware\CommandPostHandleMiddleware::class => Container\CommandPostHandleMiddlewareFactory::class,
                 Middleware\CommandPreHandleMiddleware::class  => Container\CommandPreHandleMiddlewareFactory::class,
                 Middleware\QueryPostHandleMiddleware::class   => Container\QueryPostHandleMiddlewareFactory::class,
@@ -88,17 +65,17 @@ final readonly class ConfigProvider
     }
 
     /**
-     * @return ProviderConfig
+     * @return ConfigShape
      */
     public function __invoke(): array
     {
         return [
-            'dependencies'              => $this->getDependencies(),
-            MessageBusInterface::class  => [
+            'dependencies'                       => $this->getDependencies(),
+            MessageBusInterface::class           => [
                 BusProvider::MIDDLEWARE_PIPELINE_KEY => $this->getPipeline(),
             ],
-            self::LISTENER_KEY          => [],
-            self::LISTENER_PROVIDER_KEY => [],
+            EventProvider::LISTENER_KEY          => [],
+            EventProvider::LISTENER_PROVIDER_KEY => [],
         ];
     }
 }

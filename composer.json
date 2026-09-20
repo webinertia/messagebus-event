@@ -34,14 +34,14 @@
     },
     "require": {
         "php": "~8.4.1 || ~8.5.0",
-        "laminas/laminas-servicemanager": "^4.0.0",
-        "phly/phly-event-dispatcher": "^1.5.0",
-        "php-standard-library/type": "^6.2",
+        "psr/event-dispatcher": "^1.0",
         "webware/message-bus": "2.0.x-dev",
-        "webware/webware-psl-type": "^0.1.x-dev"
+        "webware/webware-event": "^1.0.0-alpha.2"
     },
     "require-dev": {
         "infection/infection": "^0.35.0",
+        "laminas/laminas-servicemanager": "^4.0.0",
+        "phly/phly-event-dispatcher": "^1.5.0",
         "phpbench/phpbench": "^1.7",
         "phpunit/phpunit": "^13.3.0",
         "roave/security-advisories": "dev-master",

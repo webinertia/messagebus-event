@@ -12,8 +12,9 @@ use Phly\EventDispatcher\ListenerProvider\PrioritizedListenerProvider;
 use PHPUnit\Framework\Attributes\CoversNothing;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use Webware\Event\ConfigProvider as EventConfigProvider;
 use Webware\MessageBus\ConfigProvider as BusConfigProvider;
-use Webware\MessageBus\Event\ConfigProvider as EventConfigProvider;
+use Webware\MessageBus\Event\ConfigProvider as EventMiddlewareConfigProvider;
 use Webware\MessageBus\Event\Middleware\QueryPostHandleMiddleware;
 use Webware\MessageBus\Event\Middleware\QueryPreHandleMiddleware;
 use Webware\MessageBus\Event\Query\QueryPostHandleEvent;
@@ -35,18 +36,20 @@ final class LaminasServiceManagerQueryPipelineOptInTest extends TestCase
     #[Test]
     public function manuallyWiredQueryMiddlewareDispatchesQueryPreAndPostHandleEvents(): void
     {
-        $busConfig   = (new BusConfigProvider())();
-        $eventConfig = (new EventConfigProvider())();
+        $busConfig    = (new BusConfigProvider())();
+        $eventConfig  = (new EventMiddlewareConfigProvider())();
+        $wiringConfig = (new EventConfigProvider())();
 
         $container = new ServiceManager([
             'factories'  => [
                 ...$busConfig['dependencies']['factories'],
                 ...$eventConfig['dependencies']['factories'],
+                ...$wiringConfig['dependencies']['factories'],
                 EventDispatcher::class => EventDispatcherFactory::class,
             ],
             'aliases'    => [
                 ...$busConfig['dependencies']['aliases'],
-                ...$eventConfig['dependencies']['aliases'],
+                ...$wiringConfig['dependencies']['aliases'],
             ],
             'invokables' => [
                 ...$busConfig['dependencies']['invokables'],

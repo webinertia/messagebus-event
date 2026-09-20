@@ -16,7 +16,7 @@ namespace Webware\MessageBus\Event\Middleware;
 
 use Override;
 use Psr\EventDispatcher\EventDispatcherInterface;
-use Webware\MessageBus\Event\EventAwareInterface;
+use Webware\Event\EventAwareInterface;
 use Webware\MessageBus\Event\Query\QueryPostHandleEvent;
 use Webware\MessageBus\MessageInterface;
 use Webware\MessageBus\MiddlewareInterface;
