@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b92bee9a5b301f10130ac56ac61b5419",
+    "content-hash": "8459dc5f230999e1d19e143619c5dcca",
     "packages": [
         {
             "name": "phly/phly-event-dispatcher",
@@ -338,7 +338,7 @@
         },
         {
             "name": "webware/message-bus",
-            "version": "2.0.x-dev",
+            "version": "2.0.0-beta.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webinertia/message-bus.git",
@@ -367,7 +367,6 @@
             "suggest": {
                 "laminas/laminas-servicemanager": "Laminas\\ServiceManager component"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "laminas": {
@@ -6720,8 +6719,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "roave/security-advisories": 20,
-        "webware/message-bus": 20
+        "roave/security-advisories": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
