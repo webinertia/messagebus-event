@@ -16,9 +16,9 @@ namespace Webware\MessageBus\Event\Middleware;
 
 use Override;
 use Psr\EventDispatcher\EventDispatcherInterface;
+use Webware\Event\EventAwareInterface;
 use Webware\MessageBus\Command\CommandResultInterface;
 use Webware\MessageBus\Event\Command\CommandPostHandleEvent;
-use Webware\MessageBus\Event\EventAwareInterface;
 use Webware\MessageBus\MessageInterface;
 use Webware\MessageBus\MiddlewareInterface;
 use Webware\MessageBus\PipelineHandlerInterface;

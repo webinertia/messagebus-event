@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace WebwareTestAsset\MessageBus\Event;
 
 use Override;
-use Webware\MessageBus\Event\EventInterface;
-use Webware\MessageBus\Event\ListenerInterface;
+use Webware\Event\EventInterface;
+use Webware\Event\ListenerInterface;
 
 final class RecordingListener implements ListenerInterface
 {
