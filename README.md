@@ -3,7 +3,7 @@
 [![PHP Version](https://img.shields.io/packagist/php-v/webware/messagebus-event)](https://packagist.org/packages/webware/messagebus-event)
 [![Latest Version](https://img.shields.io/packagist/v/webware/messagebus-event)](https://packagist.org/packages/webware/messagebus-event)
 [![License](https://img.shields.io/github/license/webinertia/messagebus-event)](LICENSE)
-[![Continuous Integration](https://github.com/webinertia/messagebus-event/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/webinertia/messagebus-event/actions/workflows/continuous-integration.yml)
+<!-- No CI badge: the pipeline is the organization's required workflow, which exposes no per-repo badge URL. -->
 [![codecov](https://codecov.io/gh/webinertia/messagebus-event/graph/badge.svg)](https://codecov.io/gh/webinertia/messagebus-event)
 [![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fwebinertia%2Fmessagebus-event%2F2.0.x)](https://dashboard.stryker-mutator.io/reports/github.com/webinertia/messagebus-event/2.0.x)
 
