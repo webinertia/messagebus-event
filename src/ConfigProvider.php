@@ -31,7 +31,7 @@ use Webware\MessageBus\MessageBusInterface;
 final readonly class ConfigProvider
 {
     /** @return Dependencies */
-    private function getDependencies(): array
+    public function getDependencies(): array
     {
         return [
             'factories' => [
