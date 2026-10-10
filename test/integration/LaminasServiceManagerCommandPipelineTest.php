@@ -29,9 +29,9 @@ final class LaminasServiceManagerCommandPipelineTest extends TestCase
     #[Test]
     public function defaultPipelineDispatchesCommandPreAndPostHandleEvents(): void
     {
-        $busConfig    = (new BusConfigProvider())();
-        $eventConfig  = (new EventMiddlewareConfigProvider())();
-        $wiringConfig = (new EventConfigProvider())();
+        $busConfig    = new BusConfigProvider()();
+        $eventConfig  = new EventMiddlewareConfigProvider()();
+        $wiringConfig = new EventConfigProvider()();
 
         $container = new ServiceManager([
             'factories'  => [
