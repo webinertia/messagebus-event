@@ -39,7 +39,7 @@ class Event implements EventInterface, EventPropagationInterface
 }
 ```
 
-If `$name` is omitted, `getName()` falls back to `static::class` — useful for the `Command\*`/`Query\*`
+If `$name` is omitted, `getName()` falls back to `static::class` - useful for the `Command\*`/`Query\*`
 subclasses below, which don't set a name explicitly.
 
 ### `EventPropagationInterface` / `EventPropagationTrait`
@@ -96,9 +96,9 @@ interface ListenerInterface
 
 `Webware\MessageBus\Event\Command`:
 
-- **`CommandPreHandleEvent`** — `extends Event`. Constructed with a `CommandInterface $command`
+- **`CommandPreHandleEvent`**: `extends Event`. Constructed with a `CommandInterface $command`
   (`getTarget()` returns the command). `getCommand(): CommandInterface`.
-- **`CommandPostHandleEvent`** — `extends Event`. Constructed with a `CommandResultInterface $result`
+- **`CommandPostHandleEvent`**: `extends Event`. Constructed with a `CommandResultInterface $result`
   (`getTarget()` returns the result). `getCommand(): CommandInterface` (delegates to
   `$result->getCommand()`), `getResult(): CommandResultInterface`.
 
@@ -106,9 +106,9 @@ interface ListenerInterface
 
 `Webware\MessageBus\Event\Query`:
 
-- **`QueryPreHandleEvent`** — `extends Event`. Constructed with a `QueryInterface $query`.
+- **`QueryPreHandleEvent`**: `extends Event`. Constructed with a `QueryInterface $query`.
   `getQuery(): QueryInterface`.
-- **`QueryPostHandleEvent`** — `extends Event`. Constructed with a `QueryResultInterface $result`.
+- **`QueryPostHandleEvent`**: `extends Event`. Constructed with a `QueryResultInterface $result`.
   `getQuery(): QueryInterface` (delegates to `$result->getQuery()`), `getResult(): QueryResultInterface`.
 
 ## Middleware
@@ -126,20 +126,20 @@ Each middleware's constructor takes a single `Psr\EventDispatcher\EventDispatche
 
 Because `webware/message-bus`'s `MessageHandlerMiddleware` forwards the handler's `ResultInterface` back
 into the pipeline as the next "message" (`$handler->handle($result)`), a `*PostHandleMiddleware` placed
-*after* it in priority order receives the result — not the original command/query — as `$message`. This is
+*after* it in priority order receives the result - not the original command/query - as `$message`. This is
 why the pipeline priorities matter: pre-handle middleware needs a higher priority than the message handler,
 post-handle middleware needs a lower one.
 
 ## Container Factories
 
-`Webware\MessageBus\Event\Container`, all `@internal` — wired automatically by `ConfigProvider`, not
+`Webware\MessageBus\Event\Container`, all `@internal` - wired automatically by `ConfigProvider`, not
 intended for direct instantiation by consumers:
 
 - `CommandPreHandleMiddlewareFactory`, `CommandPostHandleMiddlewareFactory`,
-  `QueryPreHandleMiddlewareFactory`, `QueryPostHandleMiddlewareFactory` — each resolves
+  `QueryPreHandleMiddlewareFactory`, `QueryPostHandleMiddlewareFactory` - each resolves
   `Psr\EventDispatcher\EventDispatcherInterface` from the container and constructs the corresponding
   middleware.
-- `ListenerProviderAggregateFactory` — builds a `Phly\EventDispatcher\ListenerProvider\ListenerProviderAggregate`
+- `ListenerProviderAggregateFactory` - builds a `Phly\EventDispatcher\ListenerProvider\ListenerProviderAggregate`
   from the `listeners` / `listener_providers` config (see below), attaching a
   `PrioritizedListenerProvider` (for shape entries with a `priority`) and an `AttachableListenerProvider`
   (for everything else) to it, plus any additional listener providers registered under
@@ -182,7 +182,7 @@ Returned config shape:
 ]
 ```
 
-Note the aliases assume `phly/phly-event-dispatcher`'s concrete `EventDispatcher` class — its constructor
+Note the aliases assume `phly/phly-event-dispatcher`'s concrete `EventDispatcher` class - its constructor
 requires a `ListenerProviderInterface`, so it needs its own factory registered
 (`Phly\EventDispatcher\EventDispatcherFactory`) in any container you assemble; this package does not
 register that factory for you (see [Getting Started](getting-started.md)).
@@ -195,9 +195,9 @@ array<class-string, array<int, string|array{listener: callable|class-string, pri
 
 Keyed by event class (or any object type dispatched through the event dispatcher). Each entry is either:
 
-- A plain string — a service id to resolve from the container, or (if not registered) a `callable` string
+- A plain string - a service id to resolve from the container, or (if not registered) a `callable` string
   such as a function name.
-- A shape array `['listener' => callable|class-string, 'priority' => int]` — `priority` is optional; when
+- A shape array `['listener' => callable|class-string, 'priority' => int]` - `priority` is optional; when
   present, the listener is attached to the `PrioritizedListenerProvider` (descending priority order), and
   when absent, to the `AttachableListenerProvider` (attach order, deduplicated).
 

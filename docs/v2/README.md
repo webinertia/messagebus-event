@@ -8,7 +8,7 @@ This documentation targets the v2 release line, aligned with `webware/message-bu
 
 ## Documentation
 
-- [Getting Started](getting-started.md) — installation and wiring.
-- [Usage Examples](usage-examples.md) — listening for events, opting in to query events, custom events.
-- [API Reference](api-reference.md) — every public class, interface, and trait.
-- [Contributing](contributing.md) — local setup, tests, and static analysis.
+- [Getting Started](getting-started.md) - installation and wiring.
+- [Usage Examples](usage-examples.md) - listening for events, opting in to query events, custom events.
+- [API Reference](api-reference.md) - every public class, interface, and trait.
+- [Contributing](contributing.md) - local setup, tests, and static analysis.

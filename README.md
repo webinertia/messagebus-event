@@ -22,12 +22,12 @@ composer require webware/messagebus-event webware/message-bus
 
 Full documentation lives under [`docs/v2/`](docs/v2/README.md):
 
-- [Getting Started](docs/v2/getting-started.md) — requirements, installation, and wiring a `ServiceManager`.
-- [Usage Examples](docs/v2/usage-examples.md) — registering listeners, opting in to Query events, custom
+- [Getting Started](docs/v2/getting-started.md) - requirements, installation, and wiring a `ServiceManager`.
+- [Usage Examples](docs/v2/usage-examples.md) - registering listeners, opting in to Query events, custom
   events, stopping propagation.
-- [API Reference](docs/v2/api-reference.md) — every public class, interface, trait, and the `ConfigProvider`
+- [API Reference](docs/v2/api-reference.md) - every public class, interface, trait, and the `ConfigProvider`
   config shape.
-- [Contributing](docs/v2/contributing.md) — local setup, running tests, and static analysis.
+- [Contributing](docs/v2/contributing.md) - local setup, running tests, and static analysis.
 
 ## Development
 

@@ -3,7 +3,7 @@
 ## Requirements
 
 - PHP `~8.4.1 || ~8.5.0`
-- [`webware/message-bus`](https://github.com/webinertia/message-bus) `^0.1.0` — **not** installed
+- [`webware/message-bus`](https://github.com/webinertia/message-bus) `^0.1.0` - **not** installed
   automatically by this package (it's a `require-dev` dependency here, used only by the test suite). Your
   application must require it directly.
 - [`laminas/laminas-servicemanager`](https://github.com/laminas/laminas-servicemanager) `^4.0.0`
@@ -45,7 +45,7 @@ $container->setService('config', $config);
 
 Once wired, resolving `Webware\MessageBus\MessageBusInterface` from the container gives you a bus whose
 default middleware pipeline dispatches `CommandPreHandleEvent` before a command handler runs, and
-`CommandPostHandleEvent` after it completes. Query events are **not** wired by default — see
+`CommandPostHandleEvent` after it completes. Query events are **not** wired by default - see
 [Usage Examples](usage-examples.md#opting-in-to-query-events) to enable them.
 
 ## Registering Listeners

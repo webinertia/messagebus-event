@@ -44,7 +44,7 @@ $container->setService('config', $config);
 
 Once wired, resolving `Webware\MessageBus\MessageBusInterface` from the container gives you a bus whose
 default middleware pipeline dispatches `CommandPreHandleEvent` before a command handler runs, and
-`CommandPostHandleEvent` after it completes. Query events are **not** wired by default — see
+`CommandPostHandleEvent` after it completes. Query events are **not** wired by default - see
 [Usage Examples](usage-examples.md#opting-in-to-query-events) to enable them.
 
 ## Registering Listeners
