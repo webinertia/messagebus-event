@@ -36,9 +36,9 @@ final class LaminasServiceManagerQueryPipelineOptInTest extends TestCase
     #[Test]
     public function manuallyWiredQueryMiddlewareDispatchesQueryPreAndPostHandleEvents(): void
     {
-        $busConfig    = (new BusConfigProvider())();
-        $eventConfig  = (new EventMiddlewareConfigProvider())();
-        $wiringConfig = (new EventConfigProvider())();
+        $busConfig    = new BusConfigProvider()();
+        $eventConfig  = new EventMiddlewareConfigProvider()();
+        $wiringConfig = new EventConfigProvider()();
 
         $container = new ServiceManager([
             'factories'  => [

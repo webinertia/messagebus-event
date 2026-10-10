@@ -25,7 +25,7 @@ final class ConfigProviderTest extends TestCase
     #[Test]
     public function invokeRegistersEmptyDefaultListenersAndProviders(): void
     {
-        $config = (new ConfigProvider())();
+        $config = new ConfigProvider()();
 
         static::assertSame([], $config[EventConfigProvider::LISTENER_KEY]);
         static::assertSame([], $config[EventConfigProvider::LISTENER_PROVIDER_KEY]);
@@ -34,7 +34,7 @@ final class ConfigProviderTest extends TestCase
     #[Test]
     public function invokeRegistersMiddlewareFactories(): void
     {
-        $config = (new ConfigProvider())();
+        $config = new ConfigProvider()();
 
         static::assertSame(
             [
@@ -50,7 +50,7 @@ final class ConfigProviderTest extends TestCase
     #[Test]
     public function invokeWiresOnlyCommandMiddlewareIntoDefaultPipeline(): void
     {
-        $config = (new ConfigProvider())();
+        $config = new ConfigProvider()();
 
         static::assertSame(
             [
