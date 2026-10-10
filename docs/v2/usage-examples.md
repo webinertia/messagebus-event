@@ -4,8 +4,8 @@
 
 The default pipeline (see [`ConfigProvider::getPipeline()`](api-reference.md#configprovider)) dispatches:
 
-1. `Command\CommandPreHandleEvent` — before the command's handler runs.
-2. `Command\CommandPostHandleEvent` — after the handler returns a `CommandResultInterface`.
+1. `Command\CommandPreHandleEvent` - before the command's handler runs.
+2. `Command\CommandPostHandleEvent` - after the handler returns a `CommandResultInterface`.
 
 Register a listener under the `listeners` config key, keyed by the event class:
 
@@ -63,7 +63,7 @@ return [
 ## Opting in to Query events
 
 `Middleware\QueryPreHandleMiddleware` and `Middleware\QueryPostHandleMiddleware` are registered in the
-container by this package, but are **not** added to the default `middleware_pipeline` — only Command events
+container by this package, but are **not** added to the default `middleware_pipeline` - only Command events
 are wired out of the box. Add them yourself, choosing priorities relative to your other middleware (e.g.
 `webware/message-bus`'s own `MessageHandlerMiddleware`, wired at priority `1`):
 
@@ -89,11 +89,11 @@ with `array_merge_recursive`) adds Query events alongside the default Command on
 ## Dispatching a custom event alongside the result
 
 Both `CommandPostHandleMiddleware` and `QueryPostHandleMiddleware` also check whether the result implements
-`EventAwareInterface`; if so, and an event has been attached to it, that event is dispatched too — in
+`EventAwareInterface`; if so, and an event has been attached to it, that event is dispatched too - in
 addition to the built-in `*PostHandleEvent`.
 
 Always return the `CommandResult`/`QueryResult` value objects provided by `webware/message-bus` from your
-handlers — don't write a custom result class. Those classes are `final` precisely so results stay
+handlers - don't write a custom result class. Those classes are `final` precisely so results stay
 normalized and consistent across the application. Neither implements `EventAwareInterface`, so this hook
 simply doesn't apply to them; if a handler needs to dispatch an additional domain event, dispatch it
 directly from the handler using the `EventDispatcherInterface` instead of attaching it to the result:
@@ -122,7 +122,7 @@ final class CreateUserHandler implements CommandHandlerInterface
 ```
 
 Note that in `webware/message-bus` v2, handlers must implement the (empty marker) `CommandHandlerInterface`
-or `QueryHandlerInterface`, and the invoked method is resolved via a `StrategyInterface` — `handle()` with
+or `QueryHandlerInterface`, and the invoked method is resolved via a `StrategyInterface` - `handle()` with
 the default `HandleStrategy`, or a method named after the message's short class name with
 `ClassnameStrategy`.
 
@@ -148,4 +148,4 @@ final class HaltOnError implements ListenerInterface
 ```
 
 Note that `phly/phly-event-dispatcher`'s `EventDispatcher` must check `isPropagationStopped()` between
-listener invocations for this to have an effect — see that package's own documentation for details.
+listener invocations for this to have an effect - see that package's own documentation for details.
