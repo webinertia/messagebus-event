@@ -61,7 +61,8 @@ final class CommandPostHandleMiddlewareTest extends TestCase
 
         $dispatchedEvents = [];
         $eventDispatcher  = $this->createMock(EventDispatcherInterface::class);
-        $eventDispatcher->expects($this->exactly(2))
+        $eventDispatcher
+            ->expects($this->exactly(2))
             ->method('dispatch')
             ->willReturnCallback(static function (object $event) use (&$dispatchedEvents): object {
                 $dispatchedEvents[] = $event;
@@ -86,7 +87,8 @@ final class CommandPostHandleMiddlewareTest extends TestCase
         $result  = new CommandResult($command, MessageStatus::Success, 'value');
 
         $eventDispatcher = $this->createMock(EventDispatcherInterface::class);
-        $eventDispatcher->expects($this->once())
+        $eventDispatcher
+            ->expects($this->once())
             ->method('dispatch')
             ->with(static::callback(
                 static fn(object $event): bool => (
@@ -122,12 +124,14 @@ final class CommandPostHandleMiddlewareTest extends TestCase
         $result = $this->createStub(ResultInterface::class);
 
         $eventDispatcher = $this->createMock(EventDispatcherInterface::class);
-        $eventDispatcher->expects($this->once())
+        $eventDispatcher
+            ->expects($this->once())
             ->method('dispatch')
             ->with($ownEvent);
 
         $handler = $this->createMock(PipelineHandlerInterface::class);
-        $handler->expects($this->once())
+        $handler
+            ->expects($this->once())
             ->method('handle')
             ->with($message)
             ->willReturn($result);
@@ -154,7 +158,8 @@ final class CommandPostHandleMiddlewareTest extends TestCase
         $eventDispatcher->expects($this->never())->method('dispatch');
 
         $handler = $this->createMock(PipelineHandlerInterface::class);
-        $handler->expects($this->once())
+        $handler
+            ->expects($this->once())
             ->method('handle')
             ->with($message)
             ->willReturn($result);
