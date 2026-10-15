@@ -21,7 +21,8 @@ final class QueryPreHandleMiddlewareFactoryTest extends TestCase
         $eventDispatcher = $this->createStub(EventDispatcherInterface::class);
 
         $container = $this->createMock(ContainerInterface::class);
-        $container->expects($this->once())
+        $container
+            ->expects($this->once())
             ->method('get')
             ->with(EventDispatcherInterface::class)
             ->willReturn($eventDispatcher);

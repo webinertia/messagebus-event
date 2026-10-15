@@ -25,7 +25,8 @@ final class CommandPreHandleMiddlewareTest extends TestCase
         $result  = $this->createStub(ResultInterface::class);
 
         $eventDispatcher = $this->createMock(EventDispatcherInterface::class);
-        $eventDispatcher->expects($this->once())
+        $eventDispatcher
+            ->expects($this->once())
             ->method('dispatch')
             ->with(static::callback(
                 static fn(object $event): bool => (
@@ -35,7 +36,8 @@ final class CommandPreHandleMiddlewareTest extends TestCase
             ));
 
         $handler = $this->createMock(PipelineHandlerInterface::class);
-        $handler->expects($this->once())
+        $handler
+            ->expects($this->once())
             ->method('handle')
             ->with($command)
             ->willReturn($result);
@@ -55,7 +57,8 @@ final class CommandPreHandleMiddlewareTest extends TestCase
         $eventDispatcher->expects($this->never())->method('dispatch');
 
         $handler = $this->createMock(PipelineHandlerInterface::class);
-        $handler->expects($this->once())
+        $handler
+            ->expects($this->once())
             ->method('handle')
             ->with($message)
             ->willReturn($result);
