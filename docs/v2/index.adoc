@@ -1,0 +1,14 @@
+= Webware MessageBus Event
+
+Event integration for link:https://github.com/webinertia/message-bus[`webware/message-bus`], built on top of
+link:https://github.com/phly/phly-event-dispatcher[`phly/phly-event-dispatcher`] (PSR-14). It adds pre/post
+"handle" events for both Command and Query messages, dispatched via middleware in the bus pipeline.
+
+This documentation targets the v2 release line, aligned with `webware/message-bus` v2.
+
+== Documentation
+
+* link:getting-started.adoc[Getting Started] - installation and wiring.
+* link:usage-examples.adoc[Usage Examples] - listening for events, opting in to query events, custom events.
+* link:api-reference.adoc[API Reference] - every public class, interface, and trait.
+* link:contributing.adoc[Contributing] - local setup, tests, and static analysis.
