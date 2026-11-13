@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c6a92fdd10cdab7dd89f39bd58087cd2",
+    "content-hash": "27859e329e20686e45303e6faaeef09a",
     "packages": [
         {
             "name": "phly/phly-event-dispatcher",
@@ -6733,16 +6733,16 @@
         },
         {
             "name": "webware/webware-tools",
-            "version": "1.0.0-rc.8",
+            "version": "1.0.0-rc.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webinertia/webware-tools.git",
-                "reference": "1efb0381f951ab847f1aa5e40262768d0cdd1f31"
+                "reference": "7bad0a74c9d4b743a12c1a50f33973e6533ca17c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webinertia/webware-tools/zipball/1efb0381f951ab847f1aa5e40262768d0cdd1f31",
-                "reference": "1efb0381f951ab847f1aa5e40262768d0cdd1f31",
+                "url": "https://api.github.com/repos/webinertia/webware-tools/zipball/7bad0a74c9d4b743a12c1a50f33973e6533ca17c",
+                "reference": "7bad0a74c9d4b743a12c1a50f33973e6533ca17c",
                 "shasum": ""
             },
             "require": {
@@ -6771,10 +6771,10 @@
             ],
             "support": {
                 "issues": "https://github.com/webinertia/webware-tools/issues",
-                "source": "https://github.com/webinertia/webware-tools/tree/1.0.0-rc.8"
+                "source": "https://github.com/webinertia/webware-tools/tree/1.0.0-rc.12"
             },
-            "time": "2026-10-25T23:33:52+00:00",
-            "published-time": "2026-10-25T23:34:05+00:00"
+            "time": "2026-11-13T06:15:34+00:00",
+            "published-time": "2026-11-13T06:16:03+00:00"
         }
     ],
     "aliases": [],
