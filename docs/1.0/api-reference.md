@@ -1,13 +1,12 @@
-= API Reference
+# API Reference
 
 All classes live under the `Webware\MessageBus\Event` namespace (PSR-4 root: `src/`).
 
-== Core Event Types
+## Core Event Types
 
-=== `EventInterface`
+### `EventInterface`
 
-[source,php]
-----
+```php
 interface EventInterface
 {
     public function getName(): string;
@@ -21,15 +20,14 @@ interface EventInterface
     public function setParams(array $params): void;
     public function setTarget(object $target): void;
 }
-----
+```
 
-=== `Event`
+### `Event`
 
 Default `EventInterface` implementation. Also implements `EventPropagationInterface` via
 `EventPropagationTrait`.
 
-[source,php]
-----
+```php
 class Event implements EventInterface, EventPropagationInterface
 {
     /** @param array<string, mixed> $params */
@@ -39,15 +37,14 @@ class Event implements EventInterface, EventPropagationInterface
         array $params = [],
     ) {}
 }
-----
+```
 
-If `$name` is omitted, `getName()` falls back to `static::class` - useful for the `Command\&#42;`/`Query\&#42;`
+If `$name` is omitted, `getName()` falls back to `static::class` - useful for the `Command\*`/`Query\*`
 subclasses below, which don't set a name explicitly.
 
-=== `EventPropagationInterface` / `EventPropagationTrait`
+### `EventPropagationInterface` / `EventPropagationTrait`
 
-[source,php]
-----
+```php
 interface EventPropagationInterface
 {
     public function isPropagationStopped(): bool;
@@ -60,18 +57,17 @@ trait EventPropagationTrait
     public function isPropagationStopped(): bool;
     public function stopPropagation(bool $flag = true): void;
 }
-----
+```
 
 The trait's `stopPropagation()` accepts an optional `bool $flag = true`, letting callers re-enable
 propagation (`stopPropagation(false)`) even though the interface only requires a no-argument method.
 
-=== `EventAwareInterface` / `EventAwareTrait`
+### `EventAwareInterface` / `EventAwareTrait`
 
 Lets a value (typically a `CommandResultInterface`/`QueryResultInterface`) carry a domain event that the
 post-handle middleware should dispatch alongside the built-in `*PostHandleEvent`.
 
-[source,php]
-----
+```php
 interface EventAwareInterface
 {
     public function getEvent(): ?EventInterface;
@@ -83,81 +79,75 @@ trait EventAwareTrait
     public function getEvent(): ?EventInterface;
     public function setEvent(EventInterface $event): void;
 }
-----
+```
 
-=== `ListenerInterface`
+### `ListenerInterface`
 
 Marker/callable-shape interface for object listeners (as opposed to plain closures or `callable` strings).
 
-[source,php]
-----
+```php
 interface ListenerInterface
 {
     public function __invoke(EventInterface $event): void;
 }
-----
+```
 
-== Command Events
+## Command Events
 
 `Webware\MessageBus\Event\Command`:
 
-* *`CommandPreHandleEvent`*: `extends Event`. Constructed with a `CommandInterface $command`
+- **`CommandPreHandleEvent`**: `extends Event`. Constructed with a `CommandInterface $command`
   (`getTarget()` returns the command). `getCommand(): CommandInterface`.
-* *`CommandPostHandleEvent`*: `extends Event`. Constructed with a `CommandResultInterface $result`
+- **`CommandPostHandleEvent`**: `extends Event`. Constructed with a `CommandResultInterface $result`
   (`getTarget()` returns the result). `getCommand(): CommandInterface` (delegates to
   `$result->getCommand()`), `getResult(): CommandResultInterface`.
 
-== Query Events
+## Query Events
 
 `Webware\MessageBus\Event\Query`:
 
-* *`QueryPreHandleEvent`*: `extends Event`. Constructed with a `QueryInterface $query`.
+- **`QueryPreHandleEvent`**: `extends Event`. Constructed with a `QueryInterface $query`.
   `getQuery(): QueryInterface`.
-* *`QueryPostHandleEvent`*: `extends Event`. Constructed with a `QueryResultInterface $result`.
+- **`QueryPostHandleEvent`**: `extends Event`. Constructed with a `QueryResultInterface $result`.
   `getQuery(): QueryInterface` (delegates to `$result->getQuery()`), `getResult(): QueryResultInterface`.
 
-== Middleware
+## Middleware
 
 `Webware\MessageBus\Event\Middleware`, all implementing `Webware\MessageBus\MiddlewareInterface`:
 
-[cols="1,1,3",options="header"]
-|===
-| Class | Dispatches | Behavior
-
-| `CommandPreHandleMiddleware` | `CommandPreHandleEvent` | If `$message instanceof CommandInterface`, dispatches then calls `$handler->handle($message)`.
-| `CommandPostHandleMiddleware` | `CommandPostHandleEvent` | If `$message instanceof EventAwareInterface` with a non-null event, dispatches that event first. If `$message instanceof CommandResultInterface`, dispatches `CommandPostHandleEvent` and returns `$message` directly (does not call `$handler->handle()`). Otherwise forwards to `$handler->handle($message)`.
-| `QueryPreHandleMiddleware` | `QueryPreHandleEvent` | Same pattern as `CommandPreHandleMiddleware`, gated on `QueryInterface`.
-| `QueryPostHandleMiddleware` | `QueryPostHandleEvent` | Same pattern as `CommandPostHandleMiddleware`, gated on `QueryResultInterface`.
-|===
+| Class | Dispatches | Behavior |
+|---|---|---|
+| `CommandPreHandleMiddleware` | `CommandPreHandleEvent` | If `$message instanceof CommandInterface`, dispatches then calls `$handler->handle($message)`. |
+| `CommandPostHandleMiddleware` | `CommandPostHandleEvent` | If `$message instanceof EventAwareInterface` with a non-null event, dispatches that event first. If `$message instanceof CommandResultInterface`, dispatches `CommandPostHandleEvent` and returns `$message` directly (does not call `$handler->handle()`). Otherwise forwards to `$handler->handle($message)`. |
+| `QueryPreHandleMiddleware` | `QueryPreHandleEvent` | Same pattern as `CommandPreHandleMiddleware`, gated on `QueryInterface`. |
+| `QueryPostHandleMiddleware` | `QueryPostHandleEvent` | Same pattern as `CommandPostHandleMiddleware`, gated on `QueryResultInterface`. |
 
 Each middleware's constructor takes a single `Psr\EventDispatcher\EventDispatcherInterface $eventDispatcher`.
 
 Because `webware/message-bus`'s `MessageHandlerMiddleware` forwards the handler's `ResultInterface` back
 into the pipeline as the next "message" (`$handler->handle($result)`), a `*PostHandleMiddleware` placed
-_after_ it in priority order receives the result - not the original command/query - as `$message`. This is
+*after* it in priority order receives the result - not the original command/query - as `$message`. This is
 why the pipeline priorities matter: pre-handle middleware needs a higher priority than the message handler,
 post-handle middleware needs a lower one.
 
-== Container Factories
+## Container Factories
 
 `Webware\MessageBus\Event\Container`, all `@internal` - wired automatically by `ConfigProvider`, not
 intended for direct instantiation by consumers:
 
-* `CommandPreHandleMiddlewareFactory`, `CommandPostHandleMiddlewareFactory`,
+- `CommandPreHandleMiddlewareFactory`, `CommandPostHandleMiddlewareFactory`,
   `QueryPreHandleMiddlewareFactory`, `QueryPostHandleMiddlewareFactory` - each resolves
   `Psr\EventDispatcher\EventDispatcherInterface` from the container and constructs the corresponding
   middleware.
-* `ListenerProviderAggregateFactory` - builds a `Phly\EventDispatcher\ListenerProvider\ListenerProviderAggregate`
+- `ListenerProviderAggregateFactory` - builds a `Phly\EventDispatcher\ListenerProvider\ListenerProviderAggregate`
   from the `listeners` / `listener_providers` config (see below), attaching a
   `PrioritizedListenerProvider` (for shape entries with a `priority`) and an `AttachableListenerProvider`
   (for everything else) to it, plus any additional listener providers registered under
   `listener_providers`.
 
-[[configprovider]]
-== `ConfigProvider`
+## `ConfigProvider`
 
-[source,php]
-----
+```php
 final readonly class ConfigProvider
 {
     public const string LISTENER_KEY = 'listeners';
@@ -165,12 +155,11 @@ final readonly class ConfigProvider
 
     public function __invoke(): array;
 }
-----
+```
 
 Returned config shape:
 
-[source,php]
-----
+```php
 [
     'dependencies' => [
         'aliases' => [
@@ -191,34 +180,32 @@ Returned config shape:
     'listeners' => [],
     'listener_providers' => [],
 ]
-----
+```
 
 Note the aliases assume `phly/phly-event-dispatcher`'s concrete `EventDispatcher` class - its constructor
 requires a `ListenerProviderInterface`, so it needs its own factory registered
 (`Phly\EventDispatcher\EventDispatcherFactory`) in any container you assemble; this package does not
-register that factory for you (see link:getting-started.adoc[Getting Started]).
+register that factory for you (see [Getting Started](getting-started.md)).
 
-=== `listeners` config shape
+### `listeners` config shape
 
-[source,php]
-----
+```php
 array<class-string, array<int, string|array{listener: callable|class-string, priority?: int}>>
-----
+```
 
 Keyed by event class (or any object type dispatched through the event dispatcher). Each entry is either:
 
-* A plain string - a service id to resolve from the container, or (if not registered) a `callable` string
+- A plain string - a service id to resolve from the container, or (if not registered) a `callable` string
   such as a function name.
-* A shape array `['listener' => callable|class-string, 'priority' => int]` - `priority` is optional; when
+- A shape array `['listener' => callable|class-string, 'priority' => int]` - `priority` is optional; when
   present, the listener is attached to the `PrioritizedListenerProvider` (descending priority order), and
   when absent, to the `AttachableListenerProvider` (attach order, deduplicated).
 
-=== `listener_providers` config shape
+### `listener_providers` config shape
 
-[source,php]
-----
+```php
 array<class-string>
-----
+```
 
 A list of service ids resolving to `Psr\EventDispatcher\ListenerProviderInterface` implementations. Ids
 that aren't registered in the container are silently skipped.

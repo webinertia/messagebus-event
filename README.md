@@ -20,16 +20,14 @@ composer require webware/messagebus-event webware/message-bus
 
 ## Documentation
 
-Full documentation is published at <https://docs.webinertia.net/messagebus-event/v2/>.
+Full documentation lives under [`docs/2.0/`](docs/2.0/index.md):
 
-- [Getting Started](https://docs.webinertia.net/messagebus-event/v2/getting-started.html) - requirements, installation, and wiring a `ServiceManager`.
-- [Usage Examples](https://docs.webinertia.net/messagebus-event/v2/usage-examples.html) - registering listeners, opting in to Query events, custom
+- [Getting Started](docs/2.0/getting-started.md) - requirements, installation, and wiring a `ServiceManager`.
+- [Usage Examples](docs/2.0/usage-examples.md) - registering listeners, opting in to Query events, custom
   events, stopping propagation.
-- [API Reference](https://docs.webinertia.net/messagebus-event/v2/api-reference.html) - every public class, interface, trait, and the `ConfigProvider`
+- [API Reference](docs/2.0/api-reference.md) - every public class, interface, trait, and the `ConfigProvider`
   config shape.
-- [Contributing](https://docs.webinertia.net/messagebus-event/v2/contributing.html) - local setup, running tests, and static analysis.
-
-Documentation for the 1.x line is archived at <https://docs.webinertia.net/messagebus-event/v1/>.
+- [Contributing](docs/2.0/contributing.md) - local setup, running tests, and static analysis.
 
 ## Development
 
@@ -40,7 +38,7 @@ composer bench          # PHPBench benchmarks (bench/)
 mago format && mago lint && mago analyze
 ```
 
-See [Contributing](https://docs.webinertia.net/messagebus-event/v1/contributing.html) for details.
+See [Contributing](docs/1.0/contributing.md) for details.
 
 ## License
 
