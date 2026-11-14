@@ -1,16 +1,15 @@
-= Usage Examples
+# Usage Examples
 
-== Listening for Command events
+## Listening for Command events
 
-The default pipeline (see link:api-reference.adoc#configprovider[`ConfigProvider::getPipeline()`]) dispatches:
+The default pipeline (see [`ConfigProvider::getPipeline()`](api-reference.md#configprovider)) dispatches:
 
-. `Command\CommandPreHandleEvent` - before the command's handler runs.
-. `Command\CommandPostHandleEvent` - after the handler returns a `CommandResultInterface`.
+1. `Command\CommandPreHandleEvent` - before the command's handler runs.
+2. `Command\CommandPostHandleEvent` - after the handler returns a `CommandResultInterface`.
 
 Register a listener under the `listeners` config key, keyed by the event class:
 
-[source,php]
-----
+```php
 use Webware\MessageBus\Event\Command\CommandPostHandleEvent;
 use Webware\MessageBus\Event\EventInterface;
 use Webware\MessageBus\Event\ListenerInterface;
@@ -30,10 +29,9 @@ final class LogCommandCompletion implements ListenerInterface
         );
     }
 }
-----
+```
 
-[source,php]
-----
+```php
 return [
     'listeners' => [
         CommandPostHandleEvent::class => [
@@ -41,18 +39,17 @@ return [
         ],
     ],
 ];
-----
+```
 
 `ListenerProviderAggregateFactory` resolves `LogCommandCompletion` from the container if it's registered
 there (e.g. as an invokable or via a factory); otherwise it's treated as a plain callable/class-string.
 
-== Ordering listeners by priority
+## Ordering listeners by priority
 
 Use the shape form (`['listener' => ..., 'priority' => ...]`) when multiple listeners are attached to the
 same event and must run in a specific order. Higher priority values run first:
 
-[source,php]
-----
+```php
 return [
     'listeners' => [
         CommandPostHandleEvent::class => [
@@ -61,18 +58,16 @@ return [
         ],
     ],
 ];
-----
+```
 
-[[opting-in-to-query-events]]
-== Opting in to Query events
+## Opting in to Query events
 
 `Middleware\QueryPreHandleMiddleware` and `Middleware\QueryPostHandleMiddleware` are registered in the
-container by this package, but are *not* added to the default `middleware_pipeline` - only Command events
+container by this package, but are **not** added to the default `middleware_pipeline` - only Command events
 are wired out of the box. Add them yourself, choosing priorities relative to your other middleware (e.g.
 `webware/message-bus`'s own `MessageHandlerMiddleware`, wired at priority `1`):
 
-[source,php]
-----
+```php
 use Webware\MessageBus\ConfigProvider as BusProvider;
 use Webware\MessageBus\Event\Middleware\QueryPostHandleMiddleware;
 use Webware\MessageBus\Event\Middleware\QueryPreHandleMiddleware;
@@ -86,13 +81,12 @@ return [
         ],
     ],
 ];
-----
+```
 
 Merging this config on top of the package's own `ConfigProvider` output (later providers win when merged
 with `array_merge_recursive`) adds Query events alongside the default Command ones.
 
-[[dispatching-a-custom-event-alongside-the-result]]
-== Dispatching a custom event alongside the result
+## Dispatching a custom event alongside the result
 
 Both `CommandPostHandleMiddleware` and `QueryPostHandleMiddleware` also check whether the result implements
 `EventAwareInterface`; if so, and an event has been attached to it, that event is dispatched too - in
@@ -104,13 +98,13 @@ normalized and consistent across the application. Neither implements `EventAware
 simply doesn't apply to them; if a handler needs to dispatch an additional domain event, dispatch it
 directly from the handler using the `EventDispatcherInterface` instead of attaching it to the result:
 
-[source,php]
-----
+```php
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Webware\MessageBus\Command\CommandResult;
+use Webware\MessageBus\CommandHandlerInterface;
 use Webware\MessageBus\Event\Event;
 
-final class CreateUserHandler
+final class CreateUserHandler implements CommandHandlerInterface
 {
     public function __construct(
         private readonly EventDispatcherInterface $eventDispatcher,
@@ -125,15 +119,19 @@ final class CreateUserHandler
         return new CommandResult($command, $status, $userId);
     }
 }
-----
+```
 
-== Stopping propagation
+Note that in `webware/message-bus` v2, handlers must implement the (empty marker) `CommandHandlerInterface`
+or `QueryHandlerInterface`, and the invoked method is resolved via a `StrategyInterface` - `handle()` with
+the default `HandleStrategy`, or a method named after the message's short class name with
+`ClassnameStrategy`.
+
+## Stopping propagation
 
 `Event` implements `EventPropagationInterface` via `EventPropagationTrait`. A listener can stop later
 listeners for the same event from running:
 
-[source,php]
-----
+```php
 use Webware\MessageBus\Event\EventInterface;
 use Webware\MessageBus\Event\EventPropagationInterface;
 use Webware\MessageBus\Event\ListenerInterface;
@@ -147,7 +145,7 @@ final class HaltOnError implements ListenerInterface
         }
     }
 }
-----
+```
 
 Note that `phly/phly-event-dispatcher`'s `EventDispatcher` must check `isPropagationStopped()` between
 listener invocations for this to have an effect - see that package's own documentation for details.
