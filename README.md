@@ -38,7 +38,7 @@ composer bench          # PHPBench benchmarks (bench/)
 mago format && mago lint && mago analyze
 ```
 
-See [Contributing](docs/1.0/contributing.md) for details.
+See [Contributing](docs/2.0/contributing.md) for details.
 
 ## License
 
