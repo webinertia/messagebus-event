@@ -139,7 +139,7 @@ post-handle middleware needs a lower one.
 > `HandleStrategy` (default) calls `handle()`, `ClassnameStrategy` calls a method named after the
 > message's short class name (`lcfirst`). Handlers must implement the (empty marker)
 > `CommandHandlerInterface` or `QueryHandlerInterface`.
-
+>
 > **v2 note:** `CommandResultInterface`/`QueryResultInterface` are `@internal` in `webware/message-bus`
 > v2 - they exist for type-hinting only (`CommandResult`/`QueryResult` are `final`), not for
 > implementation.
