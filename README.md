@@ -20,7 +20,7 @@ composer require webware/messagebus-event webware/message-bus
 
 ## Documentation
 
-Full documentation lives under [`docs/2.0/`](docs/2.0/index.md):
+Full documentation lives under [`docs/2.0/`](docs/2.0):
 
 - [Getting Started](docs/2.0/getting-started.md) - requirements, installation, and wiring a `ServiceManager`.
 - [Usage Examples](docs/2.0/usage-examples.md) - registering listeners, opting in to Query events, custom
